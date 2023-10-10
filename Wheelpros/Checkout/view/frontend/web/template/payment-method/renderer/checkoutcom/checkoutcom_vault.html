@@ -1,0 +1,48 @@
+<div class="radio radiogroup__header stored-cards"
+         data-bind="css: {
+        'radiogroup__header--is-selected': (getCode() == isChecked()),
+        'radiogroup__header--side-top': $index() == 0
+        }"
+    >
+
+    <input class="radio__control radiogroup__control"
+           type="radio"
+           name="payment[method]"
+           data-bind="attr: {'id': getCode()}, value: getCode(), checked: isChecked, click: selectPaymentMethod, visible: isRadioButtonVisible()"
+    >
+
+    <label class="radio__label radiogroup__label" data-bind="attr: {'for': getCode()}">
+        <div class="radio__box"></div>
+        <!-- ko if: $parent.getImage(getCode()) -->
+        <div class="radiogroup__label-item">
+            <img data-bind="attr: {src: $parent.getImage(getCode()), alt: getTitle()}" />
+        </div>
+        <!-- /ko -->
+        <div class="radiogroup__label-item">
+            <span class="text" data-bind="text: getTitle()"></span>
+        </div>
+    </label>
+
+    <div class="radiogroup__content form form--condensed payment-method-content">
+
+        <!-- ko foreach: getRegion('messages') -->
+        <!-- ko template: getTemplate() --><!-- /ko -->
+        <!--/ko-->
+
+        <!-- Messages -->
+        <div class="message message-cko" data-bind="attr: {'id': (getCode()+'_message')}"></div>
+        <div class="message message-response-code" data-bind="attr: {'id': (getCode()+'_message')}"></div>
+        <div class="message debug-message" data-bind="attr: {'id': (getCode()+'_message')}"></div>
+
+        <!-- Saved cards -->
+        <div id="vault-container" data-bind="visible: initWidget()">
+        </div>
+
+        <!-- Billing -->
+        <div class="payment-method-billing-address" data-bind="visible: $parent.activeTab() === 'pickup'">
+            <!-- ko foreach: $parent.getRegion(getBillingAddressFormName()) -->
+            <!-- ko template: getTemplate() --><!-- /ko -->
+            <!--/ko-->
+        </div>
+    </div>
+</div>

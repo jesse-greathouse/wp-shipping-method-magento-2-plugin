@@ -1,0 +1,19 @@
+.headline {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  @include screen-sm {
+    align-items: flex-end;
+    flex-direction: row;
+  }
+
+  &__left {
+    margin-bottom: rem(15);
+
+    @include screen-sm {
+      margin-bottom: 0;
+    }
+  }
+}

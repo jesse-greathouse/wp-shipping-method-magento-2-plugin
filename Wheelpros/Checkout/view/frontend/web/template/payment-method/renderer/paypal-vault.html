@@ -1,0 +1,69 @@
+<!--
+/**
+ * Copyright © MageWorx. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+-->
+<div class="radio radiogroup__header"
+     data-bind="css: {
+        'radiogroup__header--is-selected': (getCode() == isChecked()),
+        'radiogroup__header--side-top': $index() == 0
+        }"
+>
+    <input class="radio__control radiogroup__control"
+           type="radio"
+           name="payment[method]"
+           data-bind="
+                    attr: {'id': getId()},
+                    value: getId(),
+                    click: selectPaymentMethod,
+                    checked: isChecked,
+                    visible: isRadioButtonVisible()"
+    >
+
+    <label class="label" data-bind="attr: {'for': getId()}">
+        <img data-bind="attr: {
+            'src': getIcons(getCardType()).url,
+            'width': getIcons(getCardType()).width,
+            'height': getIcons(getCardType()).height,
+            'alt': getIcons(getCardType()).title
+            }" class="payment-icon">
+        <span translate="'ending'"></span>
+        <span text="getMaskedCard()"></span>
+        (
+        <span translate="'expires'"></span>:
+        <span text="getExpirationDate()"></span>
+        )
+    </label>
+
+    <label class="radio__label radiogroup__label" data-bind="attr: {'for': getId()}">
+        <div class="radio__box"></div>
+        <div class="radiogroup__label-item">
+            <img data-bind="attr: {
+            'src': getIcons(getCardType()).url,
+            'width': getIcons(getCardType()).width,
+            'height': getIcons(getCardType()).height,
+            'alt': getIcons(getCardType()).title
+            }" class="payment-icon">
+            <span text="getPayerEmail()"></span>
+        </div>
+    </label>
+
+    <div class="radiogroup__content form form--condensed payment-method-content">
+
+        <!-- ko foreach: getRegion('messages') -->
+            <!-- ko template: getTemplate() --><!-- /ko -->
+        <!--/ko-->
+
+        <div class="payment-method-billing-address" data-bind="visible: $parent.activeTab() === 'pickup'">
+            <!-- ko foreach: $parent.getRegion('billing-address-form') -->
+            <!-- ko template: getTemplate() --><!-- /ko -->
+            <!--/ko-->
+        </div>
+
+        <!-- ko foreach: $parent.getRegion('before-place-order') -->
+            <!-- ko template: getTemplate() --><!-- /ko -->
+        <!--/ko-->
+
+    </div>
+</div>

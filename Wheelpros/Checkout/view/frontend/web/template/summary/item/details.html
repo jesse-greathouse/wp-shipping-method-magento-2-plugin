@@ -1,0 +1,48 @@
+<!--
+/**
+ * Copyright © MageWorx All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+
+<div class="summary__field product"
+     data-bind="css: {'summary__field--style-no-border': ($parentContext.$index() + 1) == $parents[1].maxCartItemsToDisplay && !$parents[1].collapsed() }">
+
+    <!-- ko foreach: getRegion('before_details') -->
+    <!-- ko template: getTemplate() --><!-- /ko -->
+    <!-- /ko -->
+
+    <div class="summary__cell">
+        <p class="text text--variation-distant" data-bind="html: $parent.name"></p>
+
+        <!-- Options START -->
+        <!-- ko if: (JSON.parse($parent.options).length > 0)-->
+
+        <!--ko foreach: JSON.parse($parent.options)-->
+        <p class="text text--variation-subdued">
+            <!-- ko text: label --><!-- /ko -->:
+            <!-- ko if: ($data.full_view)-->
+            <span data-bind="html: full_view"></span>
+            <!-- /ko -->
+            <!-- ko ifnot: ($data.full_view)-->
+            <span data-bind="html: value"></span>
+            <!-- /ko -->
+        </p>
+        <!-- /ko -->
+
+        <!-- /ko -->
+        <!-- Options END -->
+
+        <p class="text text--variation-subdued"><!-- ko i18n: 'Qty' --><!-- /ko -->: <!-- ko text: $parent.qty -->
+            <!-- /ko --></p>
+
+    </div>
+
+    <!-- ko foreach: getRegion('after_details') -->
+    <!-- ko template: getTemplate() --><!-- /ko -->
+    <!-- /ko -->
+
+    <!-- ko foreach: getRegion('item_message') -->
+    <!-- ko template: getTemplate() --><!-- /ko -->
+    <!-- /ko -->
+</div>

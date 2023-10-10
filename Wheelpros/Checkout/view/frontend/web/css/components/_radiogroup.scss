@@ -1,0 +1,142 @@
+.radiogroup {
+  display: inline-flex;
+  flex-direction: column;
+
+  $radiogroup: &;
+
+  &--size-fullwidth {
+    width: 100%;
+  }
+
+  &__header {
+    flex: 1 1 auto;
+
+    & + & {
+      margin: -1px 0 0 0;
+    }
+
+    $header: &;
+
+    .radiogroup {
+      &__label {
+        width: 100%;
+        padding: rem(10) rem(15) rem(10) rem(45);
+        min-height: rem(40);
+        line-height: rem(20);
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-color: transparent;
+          border: 1px solid $color-zircon;
+          z-index: -1;
+        }
+
+        .radio__box {
+          left: 10px;
+          top: 10px;
+          transform: none;
+        }
+      }
+    }
+
+    &--is-selected {
+      #{$radiogroup} {
+        &__content {
+          display: block;
+        }
+      }
+
+      & > .radio {
+        &__label {
+          &::after {
+            border-color: $color-accent;
+          }
+        }
+      }
+
+      & + #{$header} {
+        .radio {
+          &__label {
+            &::after {
+              border-top: 0;
+              top: 2px;
+            }
+          }
+        }
+      }
+    }
+
+    &--side-top {
+      .radio {
+        &__label {
+          &::after {
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+          }
+        }
+      }
+    }
+
+    &--side-bottom {
+      .radio {
+        &__label {
+          &::after {
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+          }
+        }
+      }
+    }
+  }
+
+  &__label {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    cursor: pointer;
+    margin-left: -3px;
+    margin-right: -3px;
+
+    @include screen-xs {
+      flex-direction: row;
+    }
+
+    &-item {
+      flex: 1;
+      margin-bottom: 10px;
+      padding-left: 3px;
+      padding-right: 3px;
+
+      & > .credit-card {
+        padding-left: 5px;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &--size-double {
+        flex-grow: 2;
+      }
+
+      &--alignment-right {
+        text-align: left;
+
+        @include screen-xs {
+          text-align: right;
+        }
+      }
+    }
+  }
+
+  &__content {
+    display: none;
+    padding: rem(10) rem(15) rem(10) rem(45);
+  }
+}

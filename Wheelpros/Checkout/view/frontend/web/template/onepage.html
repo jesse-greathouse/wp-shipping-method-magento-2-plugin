@@ -1,0 +1,61 @@
+<!-- ko foreach: getRegion('messages') -->
+<!-- ko template: getTemplate() --><!-- /ko -->
+<!--/ko-->
+
+<div class="page__section" id="mwFullPageBlock">
+    <div class="layout">
+        <div class="layout__section">
+            <div class="layout__pane" id="mwPickupInformationBlock">
+                <div class="row" data-bind="scope: 'checkout.steps.shipping-step.pickupInformation'">
+                    <!-- ko template: getTemplate() --><!-- /ko -->
+                </div>
+            </div>
+
+            <div class="layout__pane" id="mwShippingAddressBlock">
+                <div class="row" data-bind="scope: 'checkout.steps.shipping-step.shippingAddress'">
+                    <!-- ko template: getAddressTemplate() --><!-- /ko -->
+                </div>
+            </div>
+
+            <div class="layout__pane" id="mwBillingAddressBlock">
+                <div class="row" data-bind="scope: 'checkout.steps.shipping-step.billingAddress'">
+                    <!-- ko template: getAddressTemplate() --><!-- /ko -->
+                </div>
+            </div>
+        </div>
+
+        <div class="layout__section">
+            <div class="layout__pane" id="mwShippingMethodsBlock">
+                <div class="row" data-bind="scope: 'checkout.steps.shipping-step.shippingMethods'">
+                    <render></render>
+                </div>
+            </div>
+
+            <div class="layout__pane" id="mwPickupContainerBlock">
+                <div class="row" data-bind="scope: 'checkout.steps.billing-step.pickup_container'">
+                    <render></render>
+                </div>
+            </div>
+
+            <div class="layout__pane" id="mwPaymentBlock">
+                <div class="row" data-bind="scope: 'checkout.steps.billing-step.payment'">
+                    <render></render>
+                </div>
+            </div>
+
+            <div class="layout__pane" id="mwOrderCommentBlock">
+                <div class="row" data-bind="scope: 'checkout.steps.billing-step.order_comment'">
+                    <render></render>
+                </div>
+            </div>
+        </div>
+
+        <div class="layout__section">
+            <div class="layout__pane layout__pane--styled" id="mwCheckoutSidebarBlock">
+                <div class="row" data-bind="scope: 'checkout.sidebar'">
+                    <render></render>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

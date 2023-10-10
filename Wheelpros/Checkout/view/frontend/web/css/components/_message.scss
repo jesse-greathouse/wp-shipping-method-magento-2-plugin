@@ -1,0 +1,14 @@
+.message {
+  display: block;
+  padding: rem(15) rem(20);
+  border-radius: 5px;
+  background: 0;
+
+  &--positive {
+    background-color: $color-apple-green;
+  }
+
+  &--info {
+    background-color: $color-blue-moon;
+  }
+}

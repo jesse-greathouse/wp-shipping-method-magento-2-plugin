@@ -1,0 +1,60 @@
+.layout {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: rem(-20);
+  margin-left: rem(-60);
+
+  &__section {
+    flex: 1 1 rem(240);
+    margin-top: rem(20);
+    margin-left: rem(60);
+  }
+
+  &__pane {
+    &__heading {
+      margin-bottom: rem(19);
+
+      &[data-js] {
+        &::after {
+          content: 'JS';
+          position: relative;
+          top: -10px;
+          left: 5px;
+          font-weight: $font-weight-black;
+          color: $color-light-gray;
+          font-size: rem(12);
+        }
+      }
+
+      @include screen-sm {
+        margin-bottom: rem(30);
+      }
+    }
+
+    &--styled {
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: rem(-20);
+        right: rem(-20);
+        bottom: rem(-20);
+        left: rem(-20);
+        border-radius: 0;
+        box-shadow: 0px 4px 10px rgba($color-accent, 0.25);
+        z-index: -1;
+
+        @include screen-sm {
+          border-radius: 5px;
+        }
+      }
+    }
+
+    &--loading {
+      position: relative;
+    }
+  }
+}

@@ -1,0 +1,59 @@
+.credit-card {
+  display: flex;
+  flex-wrap: nowrap;
+
+  &__logo {
+    flex: 0 1 0%;
+    padding-right: rem(25);
+
+    & > .icon {
+      width: rem(40);
+      height: rem(20);
+    }
+  }
+
+  &__content {
+    flex: 1 1 100%;
+
+    & > .button {
+      margin-top: 10px;
+    }
+  }
+
+  &__number {
+    & > .text {
+      display: inline-block;
+      font-size: rem(12);
+      white-space: nowrap;
+
+      &::before {
+        content: '•••• •••• •••• ';
+        color: $color-armadillo;
+        font-size: rem(40);
+        letter-spacing: -3px;
+        line-height: 0;
+        position: relative;
+        top: 7px;
+        left: -3px;
+      }
+
+      @include screen-sm {
+        font-size: rem(16);
+
+        &::before {
+          font-size: rem(50);
+        }
+      }
+    }
+  }
+
+  &__exp-date {
+    margin-top: 5px;
+
+    & > .text {
+      font-size: rem(12);
+      color: $color-light-gray;
+      line-height: rem(16);
+    }
+  }
+}

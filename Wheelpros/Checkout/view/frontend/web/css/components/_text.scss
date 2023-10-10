@@ -1,0 +1,43 @@
+.text {
+  font-size: rem(14);
+  line-height: rem(16);
+  font-weight: $font-weight-normal;
+  color: $color-rangoon;
+  margin: 0;
+
+  &--variation-strong {
+    font-weight: $font-weight-bold;
+  }
+
+  &--variation-subdued {
+    color: $color-armadillo;
+  }
+
+  &--variation-warning {
+    color: $color-sea-buckthorn;
+  }
+
+  &--variation-distant {
+    display: inline-block;
+    margin-bottom: 5px;
+  }
+
+  &--variation-light {
+    color: $color-white;
+  }
+
+  &--size-sm {
+    font-size: rem(11);
+    line-height: rem(16);
+  }
+
+  &--size-xl {
+    font-size: rem(16);
+    line-height: rem(18);
+  }
+
+  &--size-xxl {
+    font-size: rem(20);
+    line-height: rem(22);
+  }
+}

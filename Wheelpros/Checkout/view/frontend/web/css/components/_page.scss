@@ -1,0 +1,26 @@
+.page {
+  &__section {
+    max-width: rem($screen-lg-min);
+    margin: 0 auto;
+    padding-left: rem(20);
+    padding-right: rem(20);
+
+    @include screen-lg {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  &__title {
+    font-size: rem(39);
+    line-height: rem(48);
+    margin: 0;
+    color: $color-white;
+    font-weight: $font-weight-bolder;
+
+    @include screen-sm {
+      font-size: rem(54);
+      line-height: rem(59);
+    }
+  }
+}

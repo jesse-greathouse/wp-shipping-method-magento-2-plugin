@@ -1,0 +1,22 @@
+{
+  "name": "wheelpros/wp-shipping-method-magento-2-plugin",
+  "description": "Customized Shipping method rules for use with wp-shipping-method-calculator",
+  "require": {
+    "magento/module-ui": ">=101.1",
+    "magento/module-quote": ">=101.1",
+    "magento/module-shipping": ">=100.3"
+  },
+  "type": "magento2-module",
+  "version": "1.0.0",
+  "license": [
+    "GNU-3.0"
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "MageWorx\\ExtendedShippingMethods\\": ""
+    }
+  }
+}

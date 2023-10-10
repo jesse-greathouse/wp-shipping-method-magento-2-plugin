@@ -1,0 +1,58 @@
+.radio {
+  @extend .checkbox;
+
+  $radio: &;
+
+  &--is-required {
+    @extend .checkbox--is-required;
+  }
+
+  &__control {
+    @extend .checkbox__control;
+
+    &:disabled {
+      & + #{$radio} {
+        &__label {
+          #{$radio}__box {
+            &:after {
+              background-color: lighten($color-wild-sand, 2%);
+            }
+          }
+        }
+      }
+
+      &:checked {
+        & + #{$radio} {
+          &__label {
+            #{$radio}__box {
+              &:after {
+                background-color: darken($color-zircon, 10%);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__box {
+    @extend .checkbox__box;
+    border-radius: 50%;
+
+    &::after {
+      content: "";
+      width: 8px;
+      height: 8px;
+      background-color: $color-white;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+    }
+  }
+
+  &__label {
+    @extend .checkbox__label;
+  }
+}

@@ -1,0 +1,11 @@
+.content {
+  margin-bottom: rem(50);
+
+  &--loading {
+    position: relative;
+  }
+
+  @include screen-sm {
+    margin-bottom: rem(70);
+  }
+}

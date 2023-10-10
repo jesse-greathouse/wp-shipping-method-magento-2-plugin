@@ -1,0 +1,64 @@
+<!--
+/**
+ * Copyright © MageWorx All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<div class="summary__field summary__field--style-no-border summary__field--condensed">
+    <div class="summary__cell summary__cell--content-center">
+        <small class="text text--variation-subdued text--size-sm"
+               data-bind="text: agreementsMessage">
+        </small>
+    </div>
+</div>
+<div data-role="checkout-agreements">
+    <div class="checkout-agreements fieldset" data-bind="visible: isVisible">
+        <!-- ko foreach: agreements -->
+            <!-- ko if: ($parent.isAgreementRequired($data)) -->
+                <div class="summary__field summary__field--style-no-border checkout-agreement field choice required">
+                    <div class="summary__cell control">
+                        <div class="checkbox field _required">
+                            <input type="checkbox"
+                                   class="checkbox__control required-entry"
+                                   data-bind="attr: {
+                                                    'id': $parent.getCheckboxId($parentContext, agreementId),
+                                                    'name': 'agreement[' + agreementId + ']',
+                                                    'value': agreementId
+                                                    }"/>
+                            <label class="checkbox__label label"
+                                   style="padding-left:35px;"
+                                   data-bind="attr: {'for': $parent.getCheckboxId($parentContext, agreementId)}">
+                                <div class="checkbox__box">
+                                    <svg class="icon checkbox__icon">
+                                        <use xlink:href="#icon--check"></use>
+                                    </svg>
+                                </div>
+                                <a href="#"
+                                   class="action action-show agreement-button"
+                                   data-bind="click: function(data, event) { return $parent.showContent(data, event) }"
+                                >
+                                    <span data-bind="html: checkboxText"></span>
+                                </a>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            <!-- /ko -->
+            <!-- ko ifnot: ($parent.isAgreementRequired($data)) -->
+                <div class="checkout-agreement">
+                    <div class="summary__field summary__field--style-no-border checkout-agreement">
+                        <div class="summary__cell">
+                            <button type="button" class="action action-show agreement-button"
+                                    data-bind="click: function(data, event) { return $parent.showContent(data, event) }">
+                                <span data-bind="html: checkboxText"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            <!-- /ko -->
+        <!-- /ko -->
+        <div id="checkout-agreements-modal" data-bind="afterRender: initModal" style="display: none">
+            <div class="checkout-agreements-item-content" data-bind="html: modalContent"></div>
+        </div>
+    </div>
+</div>

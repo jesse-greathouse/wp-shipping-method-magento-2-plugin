@@ -1,0 +1,38 @@
+.header {
+  background-color: $color-accent-header;
+  padding: rem(25) 0;
+  margin-bottom: rem(33);
+
+  @include screen-sm {
+    padding: rem(35) 0;
+    margin-bottom: rem(50);
+  }
+
+  &__breadcrumbs {
+    margin-bottom: rem(29);
+
+    @include screen-sm {
+      margin-bottom: rem(45);
+    }
+  }
+
+  .button {
+    &--outline-inverted {
+      background-color: $color-accent-header;
+
+      &:hover {
+        background-color: lighten($color-accent-header, 50%);
+        color: $color-accent-header;
+      }
+
+      &:disabled {
+        color: lighten($color-accent-header, 30%);
+        border-color: lighten($color-accent-header, 30%);
+      }
+
+      &:not(:active):focus {
+        box-shadow: 0 0 0px 2px rgba($color-accent-header, 0.4);
+      }
+    }
+  }
+}

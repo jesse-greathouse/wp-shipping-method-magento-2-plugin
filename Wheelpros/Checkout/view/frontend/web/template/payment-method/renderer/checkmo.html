@@ -1,0 +1,58 @@
+<div class="radio radiogroup__header"
+     data-bind="css: {
+        'radiogroup__header--is-selected': (getCode() == isChecked()),
+        'radiogroup__header--side-top': $index() == 0
+        }"
+>
+    <input class="radio__control radiogroup__control"
+           type="radio"
+           name="payment[method]"
+           data-bind="attr: {'id': getCode()}, value: getCode(), checked: isChecked, click: selectPaymentMethod, visible: isRadioButtonVisible()"
+    >
+
+    <label class="radio__label radiogroup__label" data-bind="attr: {'for': getCode()}">
+        <div class="radio__box"></div>
+        <!-- ko if: $parent.getImage(getCode()) -->
+            <div class="radiogroup__label-item">
+                <img data-bind="attr: {src: $parent.getImage(getCode())}"
+                    alt="Cash">
+            </div>
+        <!-- /ko -->
+        <div class="radiogroup__label-item">
+            <span class="text" data-bind="text: getTitle()"></span>
+        </div>
+    </label>
+
+    <div class="radiogroup__content form form--condensed payment-method-content">
+
+        <!-- ko foreach: getRegion('messages') -->
+            <!-- ko template: getTemplate() --><!-- /ko -->
+        <!--/ko-->
+
+        <div class="payment-method-billing-address" data-bind="visible: $parent.activeTab() === 'pickup'">
+            <!-- ko foreach: $parent.getRegion('billing-address-form') -->
+            <!-- ko template: getTemplate() --><!-- /ko -->
+            <!--/ko-->
+        </div>
+
+        <!-- ko if: getMailingAddress() || getPayableTo() -->
+        <dl class="items check payable">
+            <!-- ko if: getPayableTo() -->
+            <dt class="title"><!-- ko i18n: 'Make Check payable to:' --><!-- /ko --></dt>
+            <dd class="content"><!-- ko text: getPayableTo() --><!-- /ko --></dd>
+            <!-- /ko -->
+            <!-- ko if: getMailingAddress() -->
+            <dt class="title"><!-- ko i18n: 'Send Check to:' --><!-- /ko --></dt>
+            <dd class="content">
+                <address class="checkmo mailing address" data-bind="html: getMailingAddress()"></address>
+            </dd>
+            <!-- /ko -->
+        </dl>
+        <!-- /ko -->
+
+        <!-- ko foreach: $parent.getRegion('before-place-order') -->
+            <!-- ko template: getTemplate() --><!-- /ko -->
+        <!--/ko-->
+
+    </div>
+</div>

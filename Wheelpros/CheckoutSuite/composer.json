@@ -1,0 +1,10 @@
+{
+    "name": "wheelpros/module-checkoutsuite",
+    "require": {
+        "wheelpros/module-info": ">=1.0.0",
+        "wheelpros/module-checkout" : "1.0.0",
+        "wheelpros/wp-shipping-method-magento-2-plugin": ">=1.0.0"
+    },
+    "type": "metapackage",
+    "version": "1.0.0"
+}

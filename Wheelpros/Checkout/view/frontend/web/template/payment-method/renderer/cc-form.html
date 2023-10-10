@@ -1,0 +1,98 @@
+<div class="radiogroup__content form form--condensed" data-bind="attr: {id: 'payment_form_' + getCode()}">
+
+    <div class="field type">
+        <div class="control">
+            <input type="hidden"
+                   name="payment[cc_type]"
+                   class="input-text"
+                   value=""
+                   data-bind="attr: {id: getCode() + '_cc_type', 'data-container': getCode() + '-cc-type'},
+                   value: creditCardType
+                   ">
+        </div>
+    </div>
+
+    <div class="form__field number required">
+        <div class="input input--has-addon input--is-required">
+            <label class="input__label"><!-- ko i18n: 'Card number'--><!-- /ko --></label>
+
+            <input type="number"
+                   name="payment[cc_number]"
+                   class="input__control"
+                   value=""
+                   placeholder="1234 5678 9101 1213"
+                   required
+                   data-bind="attr: {
+                                    autocomplete: off,
+                                    id: getCode() + '_cc_number',
+                                    title: $t('Credit Card Number'),
+                                    'data-container': getCode() + '-cc-number',
+                                    'data-validate': JSON.stringify({'required-number':true, 'validate-card-type':getCcAvailableTypesValues(), 'validate-card-number':'#' + getCode() + '_cc_type', 'validate-cc-type':'#' + getCode() + '_cc_type'})},
+                              enable: isActive($parents),
+                              value: creditCardNumber,
+                              valueUpdate: 'keyup' "/>
+            <div class="input__addon">
+                <svg class="icon ">
+                    <use xlink:href="#icon--mastercard"></use>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <div class="form__row">
+        <div class="form__field">
+            <div class="input input--is-required" data-bind="attr: {id: getCode() + '_cc_type_exp_div'}">
+                <label class="input__label" data-bind="attr: {for: getCode() + '_expiration'}"><!-- ko i18n: 'Expiration Date'--><!-- /ko --></label>
+<!--                <input class="input__control" type="text"-->
+<!--                       placeholder="MM / YY"/>-->
+
+                <select  name="payment[cc_exp_month]"
+                         class="select select-month"
+                         data-bind="attr: {id: getCode() + '_expiration', 'data-container': getCode() + '-cc-month', 'data-validate': JSON.stringify({required:true, 'validate-cc-exp':'#' + getCode() + '_expiration_yr'})},
+                                            enable: isActive($parents),
+                                            options: getCcMonthsValues(),
+                                            optionsValue: 'value',
+                                            optionsText: 'month',
+                                            optionsCaption: $t('Month'),
+                                            value: creditCardExpMonth">
+                </select>
+
+                <select name="payment[cc_exp_year]"
+                        class="select select-year"
+                        data-bind="attr: {id: getCode() + '_expiration_yr', 'data-container': getCode() + '-cc-year', 'data-validate': JSON.stringify({required:true})},
+                                           enable: isActive($parents),
+                                           options: getCcYearsValues(),
+                                           optionsValue: 'value',
+                                           optionsText: 'year',
+                                           optionsCaption: $t('Year'),
+                                           value: creditCardExpYear">
+                </select>
+
+            </div>
+        </div>
+
+        <!-- ko if: (hasVerification())-->
+        <div class="form__field form__field--size-sm" data-bind="attr: {id: getCode() + '_cc_type_cvv_div'}">
+            <div class="input input--is-required">
+                <label class="input__label" data-bind="attr: {for: getCode() + '_cc_cid'}">
+                    <!-- ko i18n: 'Card Verification Number'--><!-- /ko -->
+                </label>
+                <input type="password"
+                       placeholder="***"
+                       maxlength="3"
+                       autocomplete="off"
+                       class="input__control"
+                       name="payment[cc_cid]"
+                       value=""
+                       data-bind="attr: {id: getCode() + '_cc_cid',
+                        title: $t('Card Verification Number'),
+                        'data-container': getCode() + '-cc-cvv',
+                        'data-validate': JSON.stringify({'required-number':true, 'validate-card-cvv':'#' + getCode() + '_cc_type'})},
+                        enable: isActive($parents),
+                        value: creditCardVerificationNumber" />
+            </div>
+        </div>
+        <!-- /ko -->
+
+    </div>
+</div>

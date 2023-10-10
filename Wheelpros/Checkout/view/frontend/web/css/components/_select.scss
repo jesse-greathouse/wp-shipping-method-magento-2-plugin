@@ -1,0 +1,29 @@
+.select {
+  @extend .input;
+
+  $select: &;
+
+  &--is-required {
+    @extend .input--is-required;
+  }
+
+  & + & {
+    margin-top: rem(10);
+  }
+
+  &__label {
+    @extend .input__label;
+  }
+
+  &__control {
+    @extend .input__control;
+    padding-right: 40px;
+
+    background: {
+      image: url(#{$images}/chevron-down.svg);
+      repeat: no-repeat;
+      size: 10px 7px;
+      position: right 15px center;
+    }
+  }
+}

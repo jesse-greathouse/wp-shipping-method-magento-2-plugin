@@ -1,0 +1,81 @@
+.form {
+  display: flex;
+  flex-wrap: wrap;
+
+  $form: &;
+
+  &--condensed {
+    #{$form} {
+      &__field:not(#{$form}__field--no-margin) {
+        margin-bottom: rem(15);
+      }
+    }
+  }
+
+  &__field {
+    flex: 1 1 auto;
+    width: 100%;
+    margin-bottom: rem(19);
+
+    @include screen-sm {
+      margin-bottom: rem(30);
+    }
+
+    &--size-sm {
+      flex-basis: rem(8);
+      max-width: rem(8);
+    }
+
+    &--content-right {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    &--no-margin {
+      margin-bottom: 0;
+
+      @include screen-sm {
+        margin-bottom: 0;
+      }
+    }
+
+    // Magento override
+    & > .label {
+      white-space: nowrap;
+    }
+  }
+
+  &__row {
+    flex: 1 1 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -5px;
+    margin-right: -5px;
+
+    #{$form} {
+      &__field {
+        min-width: rem(90);
+        flex-basis: rem(90);
+        padding-left: 5px;
+        padding-right: 5px;
+      }
+    }
+  }
+
+  &__helptext {
+    display: block;
+    font-size: rem(14);
+    line-height: rem(16);
+    font-weight: $font-weight-normal;
+    color: $color-armadillo;
+    margin-top: em(5);
+
+    &--error {
+      color: $color-red;
+    }
+
+    & + .input {
+      margin-top: em(10);
+    }
+  }
+}

@@ -1,0 +1,57 @@
+<!--
+/**
+ * Copyright © MageWorx. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+-->
+<div class="radio radiogroup__header"
+     data-bind="css: {
+        'radiogroup__header--is-selected': (getCode() == isChecked()),
+        'radiogroup__header--side-top': $index() == 0
+        }"
+>
+    <input class="radio__control radiogroup__control"
+           type="radio"
+           name="payment[method]"
+           data-bind="
+                    attr: {'id': getCode()},
+                    click: selectPaymentMethod,
+                    visible: isRadioButtonVisible()"
+           ko-value="getCode()"
+           ko-checked="isChecked"
+    >
+
+    <label class="radio__label radiogroup__label" data-bind="attr: {'for': getCode()}">
+        <div class="radio__box"></div>
+        <!-- ko if: $parent.getImage(getCode()) -->
+        <div class="radiogroup__label-item">
+            <img data-bind="attr: {src: $parent.getImage(getCode()), alt: getTitle()}" />
+        </div>
+        <!-- /ko -->
+        <div class="radiogroup__label-item">
+            <span class="text" translate="getTitle()"></span>
+        </div>
+    </label>
+
+    <div class="radiogroup__content form form--condensed payment-method-content">
+
+        <!-- ko foreach: getRegion('messages') -->
+            <!-- ko template: getTemplate() --><!-- /ko -->
+        <!--/ko-->
+
+        <div class="payment-method-billing-address" data-bind="visible: $parent.activeTab() === 'pickup'">
+            <!-- ko foreach: $parent.getRegion('billing-address-form') -->
+            <!-- ko template: getTemplate() --><!-- /ko -->
+            <!--/ko-->
+        </div>
+
+        <form class="form" id="co-payment-form" method="post" afterRender="initFormElement">
+            <render args="ccForm"></render>
+        </form>
+
+        <!-- ko foreach: $parent.getRegion('before-place-order') -->
+            <!-- ko template: getTemplate() --><!-- /ko -->
+        <!--/ko-->
+
+    </div>
+</div>

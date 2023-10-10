@@ -1,0 +1,159 @@
+<!--
+/**
+ * Copyright © MageWorx. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+-->
+
+<div class="radio radiogroup__header payment-method"
+     data-bind="css: {
+        'radiogroup__header--is-selected': (getCode() == isChecked()),
+        'radiogroup__header--side-top': $index() == 0,
+        '_active': isActive(),
+        'payment-method-braintree': true
+        }">
+    <!-- <div class="payment-method-title field choice"> -->
+    <input type="radio"
+           name="payment[method]"
+           class="radio__control radiogroup__control"
+           data-bind="attr: {'id': getCode()}, value: getCode(), checked: isChecked, click: selectPaymentMethod, visible: isRadioButtonVisible()"/>
+    <label data-bind="attr: {'for': getCode()}" class="radio__label radiogroup__label">
+        <div class="radio__box"></div>
+        <div class="radiogroup__label-item">
+            <span  class="text" data-bind="text: getTitle()"></span>
+        </div>
+    </label>
+    <!-- </div> -->
+    <div class="radiogroup__content form form--condensed payment-method-content">
+        <!-- ko foreach: getRegion('messages') -->
+        <!-- ko template: getTemplate() --><!-- /ko -->
+        <!--/ko-->
+        <div class="payment-method-billing-address">
+            <!-- ko foreach: $parent.getRegion(getBillingAddressFormName()) -->
+            <!-- ko template: getTemplate() --><!-- /ko -->
+            <!--/ko-->
+        </div>
+
+        <form id="co-transparent-form-subscribepro" class="form" data-bind="" method="post" action="#" novalidate="novalidate">
+            <fieldset data-bind="attr: {class: 'fieldset payment items ccard ' + getCode(), id: 'payment_form_' + getCode()}">
+                <div class="field type">
+                    <div class="control">
+                        <ul class="credit-card-types" style="margin: 0">
+                            <!-- ko foreach: {data: getCcAvailableTypesValues(), as: 'item'} -->
+                            <li class="item" data-bind="css: {
+                                                                 _active: $parent.selectedCardType() == item.value,
+                                                                 _inactive: $parent.selectedCardType() != null && $parent.selectedCardType() != item.value
+                                                                 } ">
+                                <!--ko if: $parent.getIcons(item.value) -->
+                                <img data-bind="attr: {
+                                        'src': $parent.getIcons(item.value).url,
+                                        'alt': item.type,
+                                        'width': $parent.getIcons(item.value).width,
+                                        'height': $parent.getIcons(item.value).height
+                                        }">
+                                <!--/ko-->
+                            </li>
+                            <!--/ko-->
+                        </ul>
+                        <input type="hidden"
+                               name="creditcard_type"
+                               class="input-text"
+                               value=""
+                               data-bind="attr: {id: getCode() + '_cc_type', 'data-container': getCode() + '-cc-type'},
+                                   value: selectedCardType
+                                   ">
+                    </div>
+                </div>
+
+                <div class="field number required input input--is-required">
+                    <label class="input__label" data-bind="attr: {for: getCode() + '_cc_number'}">
+                        <!-- ko i18n: 'Credit Card Number'--><!-- /ko -->
+                    </label>
+                    <div class="control">
+                        <div class="input__control"  data-bind="attr: {id: getCode() + '_cc_number'}" class="hosted-control" style="height: 4rem"></div>
+                        <div class="hosted-error"><!-- ko i18n: 'Please, enter valid Credit Card Number'--><!-- /ko --></div>
+                    </div>
+                    <input type="hidden" name="token" class="input__control" data-bind="attr: {id: getCode() + '_token'}, value: paymentMethodToken">
+                </div>
+
+                <div class="field date input input--is-required" data-bind="attr: {id: getCode() + '_cc_type_exp_div'}">
+                    <label data-bind="attr: {for: getCode() + '_expiration'}" class="label">
+                        <span><!-- ko i18n: 'Expiration Date'--><!-- /ko --></span>
+                    </label>
+                    <div class="control">
+                        <div class="date-wrap" style="display: flex;">
+                            <div class="child-control month" style="width: 75px;margin-right: 5px;">
+                                <input type="text"
+                                       name="creditcard_month"
+                                       data-bind="attr: {id: getCode() + '_expiration', placeholder: $t('MM')}, value: creditCardExpMonth, hasFocus: creditCardExpMonthFocus"
+                                       size="3"
+                                       maxlength="2"
+                                       autocomplete="off"
+                                >
+                            </div>
+                            <div class="child-control year" style="width: 75px;margin-right: 5px;">
+                                <input type="text"
+                                       name="creditcard_year"
+                                       data-bind="attr: {id: getCode() + '_expiration_yr', placeholder: $t('YYYY')}, value: creditCardExpYear, hasFocus: creditCardExpYearFocus"
+                                       size="5"
+                                       maxlength="4"
+                                       autocomplete="off"
+                                >
+                            </div>
+                        </div>
+                        <div class="error"><!-- ko i18n: 'Please, enter valid Expiration Date'--><!-- /ko --></div>
+                    </div>
+                </div>
+
+                <div class="field cvv input input--is-required" data-bind="attr: {id: getCode() + '_cc_type_cvv_div'}, visible: hasVerification()">
+                    <label data-bind="attr: {for: getCode() + '_cc_cid'}" class="label">
+                        <span><!-- ko i18n: 'Card Verification Number'--><!-- /ko --></span>
+                    </label>
+                    <div class="control _with-tooltip">
+                        <div data-bind="attr: {id: getCode() + '_cc_cid'}" class="input__control" style="display: block; width: 60px; height:40px"></div>
+                        <div class="field-tooltip toggle" style="left: 69px; top: 34px">
+                                            <span class="field-tooltip-action action-cvv"
+                                                  style="margin-top: -30px"
+                                                  tabindex="0"
+                                                  data-toggle="dropdown"
+                                                  data-bind="attr: {title: $t('What is this?')}, mageInit: {'dropdown':{'activeClass': '_active'}}">
+                                                <span><!-- ko i18n: 'What is this?'--><!-- /ko --></span>
+                                            </span>
+                            <div class="field-tooltip-content"
+                                 data-target="dropdown"
+                                 data-bind="html: getCvvImageHtml()"></div>
+                        </div>
+                        <div class="hosted-error"><!-- ko i18n: 'Please, enter valid Card Verification Number'--><!-- /ko --></div>
+
+                    </div>
+                </div>
+
+                <!-- ko text: initSpreedly() --><!-- /ko -->
+            </fieldset>
+        </form>
+
+        <div class="spro-3ds-wrapper" data-bind="css: {'active': show3DSiFrame()}">
+            <div id="spro-3ds-iframe"></div>
+            <div id="spro-3ds-challenge"><div id="spro-3ds-challenge-container"></div></div>
+        </div>
+
+        <div class="checkout-agreements-block">
+            <!-- ko foreach: $parent.getRegion('before-place-order') -->
+            <!-- ko template: getTemplate() --><!-- /ko -->
+            <!--/ko-->
+        </div>
+        <div class="actions-toolbar" style="display: none">
+            <div class="primary">
+                <button class="action primary checkout"
+                        type="submit"
+                        data-bind="
+                        click: startPlaceOrder,
+                        attr: {title: $t('Place Order')},
+                        css: {disabled: !canPlaceOrder()}
+                        ">
+                    <span data-bind="i18n: 'Place Order'"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

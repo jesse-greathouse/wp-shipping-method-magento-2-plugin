@@ -1,0 +1,111 @@
+.agreement-button {
+    line-height: 1.42857143;
+    padding: 0;
+    color: #1979c3;
+    text-decoration: none;
+    background: none;
+    border: 1px transparent;
+    display: inline;
+    border-radius: 0;
+    font-size: inherit;
+    font-weight: 400;
+}
+
+.stripe-payments-brand {
+    top: -12px;
+    left: 2px;
+}
+
+.pci-dss-info-block {
+    width: auto;
+    margin: auto;
+}
+
+.payment-group > .radiogroup__header > .radiogroup__label > .radiogroup__label-item > img {
+    width: 50px;
+}
+
+form > .summary > .summary__field:first-child {
+    padding-top: 0;
+}
+
+.collapsible__content > .summary > .summary__field:last-child {
+    border-bottom: none;
+}
+
+.message--error {
+    background-color: #fce6e6;
+}
+
+/** CC styles of payment methods */
+.credit-card-types {
+    padding: 0;
+}
+
+.credit-card-types .item {
+    display: inline-block;
+    list-style: none;
+    margin: 0 5px 0 0;
+    vertical-align: top;
+}
+/** Totals: no-wrap negative totals */
+.negative-total {
+    color:red;
+    white-space: nowrap;
+}
+
+#checkout div.mage-error[generated] {
+    display: block;
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    font-weight: 500;
+    margin-top: 0.5em;
+    color: #ff0000;
+}
+/** Make tax details visible as sub-item */
+.summary__field.totals-tax-details {
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-right: 10px;
+}
+/** Fix brtaintree CC form card image */
+#payment_form_braintree .braintree-credit-card-selected {
+    left: -1px;
+    top: -7px;
+}
+/** Fix brtaintree CC form CVV */
+#payment_form_braintree .hosted-cid {
+    width: 7rem;
+}
+#payment_form_braintree .cvv .field-tooltip {
+    top: 1px;
+    right: 100px;
+}
+
+.summary__cell > .cart.item.message {
+    margin: 10px 0 10px;
+}
+
+.body {
+    height: auto!important;
+    position: relative;
+}
+
+.summary__field.product {
+    flex-wrap:wrap;
+}
+.summary__cell:not(.flex-new-line) {
+    order:0;
+}
+.flex-before-new-line:before {
+    content:'';
+    width:100%;
+    order:0;
+}
+.flex-new-line {
+    order:1;
+}
+
+.payment-method-content .message:empty {
+    display: none;
+}
