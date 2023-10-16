@@ -1,5 +1,5 @@
 /**
- * Copyright © MageWorx All rights reserved.
+ * Copyright © Wheelpros All rights reserved.
  * See COPYING.txt for license details.
  */
 
@@ -9,13 +9,13 @@ define([
     'Magento_Checkout/js/model/quote',
     'Magento_Checkout/js/action/redirect-on-success',
     'Magento_Checkout/js/model/payment/additional-validators',
-    'MageWorx_Checkout/js/model/shipping-save-processor/general',
+    'Wheelpros_Checkout/js/model/shipping-save-processor/general',
     'uiRegistry',
     'Magento_Checkout/js/model/address-converter',
-    'MageWorx_Checkout/js/action/select-shipping-address',
-    'MageWorx_Checkout/js/action/select-billing-address',
+    'Wheelpros_Checkout/js/action/select-shipping-address',
+    'Wheelpros_Checkout/js/action/select-billing-address',
     'Magento_Customer/js/model/customer',
-    'MageWorx_Checkout/js/view/billing-address',
+    'Wheelpros_Checkout/js/view/billing-address',
     'jquery',
     'mage/translate'
 ], function (
@@ -38,7 +38,7 @@ define([
 
     return Component.extend({
         defaults: {
-            template: 'MageWorx_Checkout/summary/place-order',
+            template: 'Wheelpros_Checkout/summary/place-order',
             selectedPaymentMethod: null,
             label: $t('Agree & Place Order'),
             visible: true
@@ -112,7 +112,7 @@ define([
                     if (quote.isVirtual()) {
                         placeOrderThroughPaymentMethod();
                     } else {
-                        if (!customer.isLoggedIn() && quote.shippingMethod() && quote.shippingMethod().method_code !== 'mageworxpickup') {
+                        if (!customer.isLoggedIn() && quote.shippingMethod() && quote.shippingMethod().method_code !== 'wheelprospickup') {
                             //save all shipping address fields from form before place order
                             var addressFlat = uiRegistry.get('checkoutProvider').shippingAddress;
                             var address = addressConverter.formAddressDataToQuoteAddress(addressFlat);

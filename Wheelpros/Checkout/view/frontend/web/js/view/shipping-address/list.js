@@ -1,5 +1,5 @@
 /**
- * Copyright © MageWorx All rights reserved.
+ * Copyright © Wheelpros All rights reserved.
  * See COPYING.txt for license details.
  */
 
@@ -11,7 +11,7 @@ define([
     'uiLayout',
     'Magento_Customer/js/model/address-list',
     'Magento_Checkout/js/model/quote',
-    'MageWorx_Checkout/js/action/select-shipping-address',
+    'Wheelpros_Checkout/js/action/select-shipping-address',
     'Magento_Checkout/js/checkout-data',
     'uiRegistry'
 ], function (
@@ -31,12 +31,12 @@ define([
     var defaultRendererTemplate = {
         parent: '${ $.$data.parentName }',
         name: '${ $.$data.name }',
-        component: 'MageWorx_Checkout/js/view/shipping-address/address-renderer/default'
+        component: 'Wheelpros_Checkout/js/view/shipping-address/address-renderer/default'
     };
 
     return Component.extend({
         defaults: {
-            template: 'MageWorx_Checkout/shipping-address/list',
+            template: 'Wheelpros_Checkout/shipping-address/list',
             visible: addressList().length > 0,
             addressListLength: addressList().length,
             rendererTemplates: []

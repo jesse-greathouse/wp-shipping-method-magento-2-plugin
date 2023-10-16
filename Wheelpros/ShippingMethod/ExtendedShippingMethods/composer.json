@@ -1,6 +1,6 @@
 {
-  "name": "mageworx/module-extended-shipping-methods",
-  "description": "Extended Shipping Methods Module by MageWorx",
+  "name": "wheelpros/module-extended-shipping-methods",
+  "description": "Extended Shipping Methods Module by Wheelpros",
   "require": {
     "magento/module-ui": ">=101.1",
     "magento/module-quote": ">=101.1",
@@ -17,7 +17,7 @@
       "registration.php"
     ],
     "psr-4": {
-      "MageWorx\\ExtendedShippingMethods\\": ""
+      "Wheelpros\\ExtendedShippingMethods\\": ""
     }
   }
 }

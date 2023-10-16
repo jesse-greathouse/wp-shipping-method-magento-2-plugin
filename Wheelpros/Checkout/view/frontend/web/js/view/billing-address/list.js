@@ -1,7 +1,4 @@
-/**
- * Copyright © MageWorx. All rights reserved.
- * See LICENSE.txt for license details.
- */
+
 
 define([
     'uiComponent',
@@ -9,7 +6,7 @@ define([
     'mage/translate',
     'Magento_Customer/js/model/customer',
     'Magento_Checkout/js/model/quote',
-    'MageWorx_Checkout/js/action/select-billing-address',
+    'Wheelpros_Checkout/js/action/select-billing-address',
     'Magento_Checkout/js/checkout-data',
     'uiRegistry',
     'mageUtils',
@@ -47,12 +44,12 @@ define([
     var defaultRendererTemplate = {
         parent: '${ $.$data.parentName }',
         name: '${ $.$data.name }',
-        component: 'MageWorx_Checkout/js/view/billing-address/address-renderer/default'
+        component: 'Wheelpros_Checkout/js/view/billing-address/address-renderer/default'
     };
 
     return Component.extend({
         defaults: {
-            template: 'MageWorx_Checkout/billing-address/list',
+            template: 'Wheelpros_Checkout/billing-address/list',
             selectedAddress: null,
             isNewAddressSelected: false,
             isAddressDifferent: false,

@@ -1,23 +1,20 @@
 <?php
-/**
- * Copyright © MageWorx. All rights reserved.
- * See LICENSE.txt for license details.
- */
 
-namespace MageWorx\Checkout\Model;
+
+namespace Wheelpros\Checkout\Model;
 
 use Exception;
-use MageWorx\Checkout\Api\EmailSubscriptionManagerInterface;
+use Wheelpros\Checkout\Api\EmailSubscriptionManagerInterface;
 
 class EmailSubscriptionManager implements EmailSubscriptionManagerInterface
 {
     /**
-     * @var \MageWorx\Checkout\Model\ResourceModel\CheckoutDummyData
+     * @var \Wheelpros\Checkout\Model\ResourceModel\CheckoutDummyData
      */
     private $checkoutDummyDataResource;
 
     /**
-     * @var \MageWorx\Checkout\Model\CheckoutDummyDataFactory
+     * @var \Wheelpros\Checkout\Model\CheckoutDummyDataFactory
      */
     private $checkoutDummyDataFactory;
 
@@ -34,14 +31,14 @@ class EmailSubscriptionManager implements EmailSubscriptionManagerInterface
     /**
      * EmailSubscriptionManager constructor.
      *
-     * @param \MageWorx\Checkout\Model\ResourceModel\CheckoutDummyData $checkoutDummyDataResource
-     * @param \MageWorx\Checkout\Model\CheckoutDummyDataFactory $checkoutDummyDataFactory
+     * @param \Wheelpros\Checkout\Model\ResourceModel\CheckoutDummyData $checkoutDummyDataResource
+     * @param \Wheelpros\Checkout\Model\CheckoutDummyDataFactory $checkoutDummyDataFactory
      * @param \Magento\Quote\Model\MaskedQuoteIdToQuoteIdInterface $maskedQuoteIdToQuoteId
      * @param \Psr\Log\LoggerInterface $logger
      */
     public function __construct(
-        \MageWorx\Checkout\Model\ResourceModel\CheckoutDummyData $checkoutDummyDataResource,
-        \MageWorx\Checkout\Model\CheckoutDummyDataFactory $checkoutDummyDataFactory,
+        \Wheelpros\Checkout\Model\ResourceModel\CheckoutDummyData $checkoutDummyDataResource,
+        \Wheelpros\Checkout\Model\CheckoutDummyDataFactory $checkoutDummyDataFactory,
         \Magento\Quote\Model\MaskedQuoteIdToQuoteIdInterface $maskedQuoteIdToQuoteId,
         \Psr\Log\LoggerInterface $logger
     ) {
@@ -86,7 +83,7 @@ class EmailSubscriptionManager implements EmailSubscriptionManagerInterface
      */
     public function saveSubscription(bool $status, int $cartId): bool
     {
-        /** @var \MageWorx\Checkout\Model\CheckoutDummyData $model */
+        /** @var \Wheelpros\Checkout\Model\CheckoutDummyData $model */
         $model = $this->checkoutDummyDataFactory->create();
         $this->checkoutDummyDataResource->load($model, $cartId, 'cart_id');
         $model->setData('email_subscription', $status);
@@ -109,7 +106,7 @@ class EmailSubscriptionManager implements EmailSubscriptionManagerInterface
      */
     public function getEmailSubscriptionStatusByQuoteId(int $quoteId): bool
     {
-        /** @var \MageWorx\Checkout\Model\CheckoutDummyData $model */
+        /** @var \Wheelpros\Checkout\Model\CheckoutDummyData $model */
         $model = $this->checkoutDummyDataFactory->create();
         $this->checkoutDummyDataResource->load($model, $quoteId, 'cart_id');
         $subscriptionStatus = (bool)$model->getData('email_subscription');

@@ -1,5 +1,5 @@
 /**
- * Copyright © MageWorx. All rights reserved.
+ * Copyright © Wheelpros. All rights reserved.
  * See COPYING.txt for license details.
  */
 
@@ -13,7 +13,7 @@ define([
     return function (originalValidatorObject) {
         var updateValidator = {};
 
-        if (window.isMageWorxCheckout) {
+        if (window.isWheelprosCheckout) {
             var checkoutConfig = window.checkoutConfig,
                 agreementsConfig = checkoutConfig ? checkoutConfig.checkoutAgreements : {},
                 agreementsInputPath = 'div.checkout-agreements input';

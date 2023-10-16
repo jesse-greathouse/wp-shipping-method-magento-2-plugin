@@ -1,5 +1,5 @@
 /**
- * Copyright © MageWorx, Inc. All rights reserved.
+ * Copyright © Wheelpros, Inc. All rights reserved.
  */
 define([
     'uiComponent',
@@ -16,7 +16,7 @@ define([
 
     return Component.extend({
         defaults: {
-            template: 'MageWorx_Checkout/shipping-method/item/price'
+            template: 'Wheelpros_Checkout/shipping-method/item/price'
         },
         isDisplayShippingPriceExclTax: window.checkoutConfig.isDisplayShippingPriceExclTax,
         isDisplayShippingBothPrices: window.checkoutConfig.isDisplayShippingBothPrices,

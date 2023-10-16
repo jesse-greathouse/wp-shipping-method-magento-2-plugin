@@ -1,17 +1,14 @@
-/**
- * Copyright © MageWorx. All rights reserved.
- * See LICENSE.txt for license details.
- */
+
 define(['uiRegistry'], function (registry) {
     'use strict';
 
     return function (origComponent) {
 
-        if (window.isMageWorxCheckout) {
+        if (window.isWheelprosCheckout) {
             return origComponent.extend({
                 defaults: {
-                    template: 'MageWorx_Checkout/payment-method/renderer/authorizenet-accept',
-                    ccForm: 'MageWorx_Checkout/payment-method/renderer/cc-form'
+                    template: 'Wheelpros_Checkout/payment-method/renderer/authorizenet-accept',
+                    ccForm: 'Wheelpros_Checkout/payment-method/renderer/cc-form'
                 },
 
                 selectPaymentMethod: function () {

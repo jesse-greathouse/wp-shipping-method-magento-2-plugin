@@ -1,7 +1,4 @@
-/**
- * Copyright © MageWorx. All rights reserved.
- * See LICENSE.txt for license details.
- */
+
 define(
     [
         'uiLayout',
@@ -37,7 +34,7 @@ define(
 
         return function (origComponent) {
 
-            if (window.isMageWorxCheckout) {
+            if (window.isWheelprosCheckout) {
 
                 var inputNode = {
                     parent: '${ $.$data.parentName }',

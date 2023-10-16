@@ -1,13 +1,10 @@
-/**
- * Copyright © MageWorx. All rights reserved.
- * See LICENSE.txt for license details.
- */
+
 
 define([
     'uiComponent',
     'jquery',
     'mage/template',
-    'text!MageWorx_Checkout/template/spinner.html',
+    'text!Wheelpros_Checkout/template/spinner.html',
     'jquery/ui'
 ], function (Component, $, mageTemplate, spinnerTemplate) {
     'use strict';

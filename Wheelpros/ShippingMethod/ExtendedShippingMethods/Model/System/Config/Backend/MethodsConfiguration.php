@@ -1,10 +1,7 @@
 <?php
-/**
- * Copyright © MageWorx. All rights reserved.
- * See LICENSE.txt for license details.
- */
 
-namespace MageWorx\ExtendedShippingMethods\Model\System\Config\Backend;
+
+namespace Wheelpros\ExtendedShippingMethods\Model\System\Config\Backend;
 
 use Exception;
 use Magento\Config\Model\Config\Backend\File\RequestData\RequestDataInterface;
@@ -21,7 +18,7 @@ use Magento\MediaStorage\Model\File\Uploader;
 use Magento\MediaStorage\Model\File\UploaderFactory;
 use Magento\Store\Model\Store;
 use Magento\Store\Model\StoreManagerInterface;
-use MageWorx\ExtendedShippingMethods\Helper\Data as Helper;
+use Wheelpros\ExtendedShippingMethods\Helper\Data as Helper;
 use Magento\Config\Model\ResourceModel\Config\Data\Collection as ConfigDataCollection;
 
 class MethodsConfiguration extends \Magento\Framework\App\Config\Value

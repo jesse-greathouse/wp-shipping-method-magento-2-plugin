@@ -1,10 +1,7 @@
-/**
- * Copyright © MageWorx. All rights reserved.
- * See LICENSE.txt for license details.
- */
+
 define([
     'Magento_Checkout/js/action/select-shipping-address',
-    'MageWorx_Checkout/js/model/update-totals-processor'
+    'Wheelpros_Checkout/js/model/update-totals-processor'
 ], function (originalSelectShippingAddressAction, updateTotalsProcessor) {
     'use strict';
 

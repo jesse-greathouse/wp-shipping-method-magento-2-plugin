@@ -1,5 +1,5 @@
 /**
- * Copyright © MageWorx All rights reserved.
+ * Copyright © Wheelpros All rights reserved.
  * See COPYING.txt for license details.
  */
 
@@ -12,7 +12,7 @@ define([
 
     return Component.extend({
         defaults: {
-            template: 'MageWorx_Checkout/summary/totals/shipping'
+            template: 'Wheelpros_Checkout/summary/totals/shipping'
         }
     });
 });

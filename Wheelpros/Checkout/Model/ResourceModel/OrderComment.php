@@ -1,10 +1,7 @@
 <?php
-/**
- * Copyright © MageWorx. All rights reserved.
- * See LICENSE.txt for license details.
- */
 
-namespace MageWorx\Checkout\Model\ResourceModel;
+
+namespace Wheelpros\Checkout\Model\ResourceModel;
 
 use Magento\Framework\Model\ResourceModel\Db\AbstractDb;
 
@@ -17,6 +14,6 @@ class OrderComment extends AbstractDb
      */
     protected function _construct()
     {
-        $this->_init('mageworx_checkout_order_comments', 'id');
+        $this->_init('wheelpros_checkout_order_comments', 'id');
     }
 }

@@ -1,5 +1,5 @@
 /**
- * Copyright © MageWorx. All rights reserved.
+ * Copyright © Wheelpros. All rights reserved.
  * See COPYING.txt for license details.
  */
 
@@ -16,7 +16,7 @@ define([
     return function (originalDataResolver) {
         var updateObject = {};
 
-        if (window.isMageWorxCheckout) {
+        if (window.isWheelprosCheckout) {
 
             /**
              * Wrap shipping address resolver to set first available address as a shipping address

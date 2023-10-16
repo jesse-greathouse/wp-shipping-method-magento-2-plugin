@@ -1,6 +1,6 @@
 //Amazon_Payment v4.0.4 compatibility
 define([
-    'MageWorx_Checkout/js/view/payment/list',
+    'Wheelpros_Checkout/js/view/payment/list',
     'jquery',
     'underscore',
     'ko',
@@ -13,7 +13,7 @@ define([
     'Amazon_Payment/js/model/storage'
 
 ], function (
-    mageworxPaymentList,
+    wheelprosPaymentList,
     $,
     _,
     ko,
@@ -29,7 +29,7 @@ define([
 
     var self;
 
-    return mageworxPaymentList.extend({
+    return wheelprosPaymentList.extend({
         /**
          * Initialize view.
          *

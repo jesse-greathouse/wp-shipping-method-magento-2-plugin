@@ -1,10 +1,7 @@
 <?php
-/**
- * Copyright © MageWorx. All rights reserved.
- * See LICENSE.txt for license details.
- */
 
-namespace MageWorx\Checkout\Preprocessor\Plugin;
+
+namespace Wheelpros\Checkout\Preprocessor\Plugin;
 
 use Magento\Framework\View\Asset\PreProcessor\Chain;
 

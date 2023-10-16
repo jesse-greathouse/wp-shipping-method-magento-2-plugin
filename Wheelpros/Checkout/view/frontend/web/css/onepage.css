@@ -1,5 +1,5 @@
 /** Header */
-.mageworx-checkout-header {
+.wheelpros-checkout-header {
     min-height: 137px;
     background: #3367EE;
     color: white;
@@ -7,11 +7,11 @@
     padding-top: 39px;
 }
 
-.mw-chk-breadcrumb-link, .mw-chk-breadcrumb-link:hover, .mw-chk-breadcrumb-link:visited {
+.wp-chk-breadcrumb-link, .wp-chk-breadcrumb-link:hover, .wp-chk-breadcrumb-link:visited {
     color: white;
 }
 
-.mageworx-checkout-header .mw-chk-title {
+.wheelpros-checkout-header .wp-chk-title {
     font-family: 'Montserrat', sans-serif;
     font-style: normal;
     font-weight: bold;
@@ -21,7 +21,7 @@
     color: #FFFFFF;
 }
 
-.mageworx-checkout-header .mw-chk-breadcrumbs {
+.wheelpros-checkout-header .wp-chk-breadcrumbs {
     font-family: 'Montserrat', sans-serif;
     font-style: normal;
     font-weight: 600;
@@ -32,22 +32,22 @@
 }
 
 /** Main content */
-.mageworx_checkout-onepage-index > .page-wrapper {
+.wheelpros_checkout-onepage-index > .page-wrapper {
     padding: 60px 100px 60px 120px;
 }
 
 @media screen and (min-width: 768px) {
-    .mageworx_checkout-onepage-index > .page-wrapper > .page-main {
+    .wheelpros_checkout-onepage-index > .page-wrapper > .page-main {
         padding-left: 0 !important;
         padding-right: 0 !important;
     }
 
-    .mageworx_checkout-onepage-index > .page-wrapper .page-title-wrapper {
+    .wheelpros_checkout-onepage-index > .page-wrapper .page-title-wrapper {
         max-width: 63%;
     }
 }
 
-.mageworx_checkout-onepage-index > .page-wrapper .page-title-wrapper .page-title {
+.wheelpros_checkout-onepage-index > .page-wrapper .page-title-wrapper .page-title {
     font-family: 'Montserrat', sans-serif;
     font-style: normal;
     font-weight: 500;

@@ -1,10 +1,7 @@
 <?php
-/**
- * Copyright ©  MageWorx. All rights reserved.
- * See LICENSE.txt for license details.
- */
 
-namespace MageWorx\Info\Helper;
+
+namespace Wheelpros\Info\Helper;
 
 use Magento\Framework\App\Helper\AbstractHelper;
 use Magento\Framework\App\Helper\Context;
@@ -19,37 +16,37 @@ class Data extends AbstractHelper
     /**
      * @var string
      */
-    const MAGEWORX_SITE = 'https://www.mageworx.com';
+    const WHEELPROS_SITE = 'https://www.wheelpros.com';
 
     /**
      * XML config path for updates notification
      */
-    const XML_PATH_UPDATES_NOTIFICATION = 'mageworx_settings/general/updates_notification';
+    const XML_PATH_UPDATES_NOTIFICATION = 'wheelpros_settings/general/updates_notification';
 
     /**
      * XML config path for offers notification
      */
-    const XML_PATH_OFFERS_NOTIFICATION = 'mageworx_settings/general/offers_notification';
+    const XML_PATH_OFFERS_NOTIFICATION = 'wheelpros_settings/general/offers_notification';
 
     /**
      * XML config path for offers notification
      */
-    const XML_PATH_EXTENSION_INFO_AUTOLOAD = 'mageworx_settings/extensions/extension_info_autoload';
+    const XML_PATH_EXTENSION_INFO_AUTOLOAD = 'wheelpros_settings/extensions/extension_info_autoload';
 
     /**
      * XML config path for offers notification
      */
-    const XML_PATH_INSTALLED_EXTENSION_DATA = 'mageworx_settings/general/installed_data';
+    const XML_PATH_INSTALLED_EXTENSION_DATA = 'wheelpros_settings/general/installed_data';
 
     /**
      * XML config path for offers notification
      */
-    const XML_PATH_RECOMMENDED_EXTENSION_DATA = 'mageworx_settings/general/recommended_data';
+    const XML_PATH_RECOMMENDED_EXTENSION_DATA = 'wheelpros_settings/general/recommended_data';
 
     /**
      * @var string
      */
-    const CACHE_IDENTIFIER_EXTENSION_LIST = 'mageworx_extension_list_lastcheck';
+    const CACHE_IDENTIFIER_EXTENSION_LIST = 'wheelpros_extension_list_lastcheck';
 
     /**
      * @var int
@@ -59,12 +56,12 @@ class Data extends AbstractHelper
     /**
      * @var string
      */
-    const EXTENSION_LIST_URL = self::MAGEWORX_SITE . '/extensions_list.js';
+    const EXTENSION_LIST_URL = self::WHEELPROS_SITE . '/extensions_list.js';
 
     /**
      * @var string
      */
-    const EXTENSION_REVIEW_URL = self::MAGEWORX_SITE . '/infoprovider/index/review';
+    const EXTENSION_REVIEW_URL = self::WHEELPROS_SITE . '/infoprovider/index/review';
 
     /**
      * @var \Magento\Framework\App\Config\Storage\WriterInterface
@@ -90,7 +87,7 @@ class Data extends AbstractHelper
     protected $productMetadata;
 
     /**
-     * @var \MageWorx\Info\Model\MetaPackageList
+     * @var \Wheelpros\Info\Model\MetaPackageList
      */
     protected $metaPackageList;
 
@@ -107,7 +104,7 @@ class Data extends AbstractHelper
     /**
      * Data constructor.
      *
-     * @param \MageWorx\Info\Model\MetaPackageList $metaPackageList
+     * @param \Wheelpros\Info\Model\MetaPackageList $metaPackageList
      * @param Context $context
      * @param \Magento\Framework\App\Config\Storage\WriterInterface $configWriter
      * @param \Magento\Framework\App\CacheInterface $cacheManager
@@ -117,7 +114,7 @@ class Data extends AbstractHelper
      */
     public function __construct(
         ModuleManager $moduleManager,
-        \MageWorx\Info\Model\MetaPackageList $metaPackageList,
+        \Wheelpros\Info\Model\MetaPackageList $metaPackageList,
         Context $context,
         \Magento\Framework\App\Config\Storage\WriterInterface $configWriter,
         \Magento\Framework\App\CacheInterface $cacheManager,

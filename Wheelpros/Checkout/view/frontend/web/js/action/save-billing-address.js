@@ -1,7 +1,4 @@
-/**
- * Copyright © MageWorx. All rights reserved.
- * See LICENSE.txt for license details.
- */
+
 define([
     'Magento_Ui/js/model/messageList',
     'Magento_Checkout/js/model/full-screen-loader',

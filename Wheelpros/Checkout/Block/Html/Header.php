@@ -1,13 +1,10 @@
 <?php
-/**
- * Copyright © MageWorx. All rights reserved.
- * See LICENSE.txt for license details.
- */
 
-namespace MageWorx\Checkout\Block\Html;
+
+namespace Wheelpros\Checkout\Block\Html;
 
 use Magento\Framework\View\Element\Template;
-use MageWorx\Checkout\Api\CheckoutConfigInterface;
+use Wheelpros\Checkout\Api\CheckoutConfigInterface;
 
 class Header extends Template
 {

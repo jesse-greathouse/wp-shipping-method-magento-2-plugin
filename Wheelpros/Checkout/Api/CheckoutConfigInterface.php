@@ -1,10 +1,7 @@
 <?php
-/**
- * Copyright © MageWorx. All rights reserved.
- * See LICENSE.txt for license details.
- */
 
-namespace MageWorx\Checkout\Api;
+
+namespace Wheelpros\Checkout\Api;
 
 /**
  * Interface CheckoutConfigInterface.
@@ -15,32 +12,32 @@ namespace MageWorx\Checkout\Api;
  */
 interface CheckoutConfigInterface
 {
-    const XML_PATH_ENABLED                    = 'mageworx_checkout/main/enabled';
-    const XML_PATH_CHECKOUT_PAGE_TITLE        = 'mageworx_checkout/main/checkout_page_title';
-    const XML_PATH_EMAIL_SUBSCRIPTION_ENABLED = 'mageworx_checkout/main/email_subscription_enabled';
-    const XML_PATH_EMAIL_SUBSCRIPTION_TITLE   = 'mageworx_checkout/main/email_subscription_title';
-    const XML_PATH_MERGE_JS_CSS               = 'mageworx_checkout/main/merge_js_css';
+    const XML_PATH_ENABLED                    = 'wheelpros_checkout/main/enabled';
+    const XML_PATH_CHECKOUT_PAGE_TITLE        = 'wheelpros_checkout/main/checkout_page_title';
+    const XML_PATH_EMAIL_SUBSCRIPTION_ENABLED = 'wheelpros_checkout/main/email_subscription_enabled';
+    const XML_PATH_EMAIL_SUBSCRIPTION_TITLE   = 'wheelpros_checkout/main/email_subscription_title';
+    const XML_PATH_MERGE_JS_CSS               = 'wheelpros_checkout/main/merge_js_css';
 
-    const XML_PATH_CREATE_ACCOUNT_ENABLED = 'mageworx_checkout/main/create_account_enabled';
-    const XML_PATH_CREATE_ACCOUNT_FORCED  = 'mageworx_checkout/main/create_account_forced';
-    const XML_PATH_CREATE_ACCOUNT_TITLE   = 'mageworx_checkout/main/create_account_title';
-    const XML_PATH_CREATE_ACCOUNT_CHECKED = 'mageworx_checkout/main/create_account_checked';
+    const XML_PATH_CREATE_ACCOUNT_ENABLED = 'wheelpros_checkout/main/create_account_enabled';
+    const XML_PATH_CREATE_ACCOUNT_FORCED  = 'wheelpros_checkout/main/create_account_forced';
+    const XML_PATH_CREATE_ACCOUNT_TITLE   = 'wheelpros_checkout/main/create_account_title';
+    const XML_PATH_CREATE_ACCOUNT_CHECKED = 'wheelpros_checkout/main/create_account_checked';
 
-    const XML_PATH_COUPON_CODE_VISIBLE = 'mageworx_checkout/coupon_code/visible';
-    const XML_PATH_COUPON_CODE_TOOLTIP = 'mageworx_checkout/coupon_code/tooltip';
+    const XML_PATH_COUPON_CODE_VISIBLE = 'wheelpros_checkout/coupon_code/visible';
+    const XML_PATH_COUPON_CODE_TOOLTIP = 'wheelpros_checkout/coupon_code/tooltip';
 
-    const XML_PATH_DEFAULT_SHIPPING_METHOD = 'mageworx_checkout/experience/default_shipping_method';
-    const XML_PATH_DEFAULT_PAYMENT_METHOD  = 'mageworx_checkout/experience/default_payment_method';
+    const XML_PATH_DEFAULT_SHIPPING_METHOD = 'wheelpros_checkout/experience/default_shipping_method';
+    const XML_PATH_DEFAULT_PAYMENT_METHOD  = 'wheelpros_checkout/experience/default_payment_method';
 
-    const XML_PATH_ORDER_COMMENTS_ENABLED = 'mageworx_checkout/main/order_comment_enabled';
-    const XML_PATH_ORDER_COMMENTS_LABEL   = 'mageworx_checkout/main/order_comment_title';
+    const XML_PATH_ORDER_COMMENTS_ENABLED = 'wheelpros_checkout/main/order_comment_enabled';
+    const XML_PATH_ORDER_COMMENTS_LABEL   = 'wheelpros_checkout/main/order_comment_title';
 
-    const XML_PATH_DISPLAY_PAYMENT_METHOD_IMAGES = 'mageworx_checkout/payment_methods/add_icons';
-    const XML_PATH_PAYMENT_METHOD_IMAGES         = 'mageworx_checkout/payment_methods/configuration';
+    const XML_PATH_DISPLAY_PAYMENT_METHOD_IMAGES = 'wheelpros_checkout/payment_methods/add_icons';
+    const XML_PATH_PAYMENT_METHOD_IMAGES         = 'wheelpros_checkout/payment_methods/configuration';
 
-    const XML_PATH_LABELS = 'mageworx_checkout/labels';
+    const XML_PATH_LABELS = 'wheelpros_checkout/labels';
 
-    const XML_PATH_CHECKOUT_AGREEMENTS_MESSAGE = 'mageworx_checkout/checkout_agreements/message';
+    const XML_PATH_CHECKOUT_AGREEMENTS_MESSAGE = 'wheelpros_checkout/checkout_agreements/message';
 
     /**
      * Is module enabled

@@ -1,10 +1,7 @@
 <?php
-/**
- * Copyright © MageWorx. All rights reserved.
- * See LICENSE.txt for license details.
- */
 
-namespace MageWorx\Checkout\Plugin;
+
+namespace Wheelpros\Checkout\Plugin;
 
 use Magento\Store\Model\ScopeInterface;
 
@@ -17,17 +14,17 @@ use Magento\Store\Model\ScopeInterface;
 class AllowForcedRegistrationForVirtualOrders
 {
     /**
-     * @var \MageWorx\Checkout\Api\CheckoutConfigInterface
+     * @var \Wheelpros\Checkout\Api\CheckoutConfigInterface
      */
     private $checkoutConfig;
 
     /**
      * Cart constructor.
      *
-     * @param \MageWorx\Checkout\Api\CheckoutConfigInterface $checkoutConfig
+     * @param \Wheelpros\Checkout\Api\CheckoutConfigInterface $checkoutConfig
      */
     public function __construct(
-        \MageWorx\Checkout\Api\CheckoutConfigInterface $checkoutConfig
+        \Wheelpros\Checkout\Api\CheckoutConfigInterface $checkoutConfig
     ) {
         $this->checkoutConfig = $checkoutConfig;
     }

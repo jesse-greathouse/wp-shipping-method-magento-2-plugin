@@ -1,16 +1,13 @@
 <?php
-/**
- * Copyright © MageWorx. All rights reserved.
- * See LICENSE.txt for license details.
- */
 
-namespace MageWorx\Checkout\Block\Checkout\Onepage;
+
+namespace Wheelpros\Checkout\Block\Checkout\Onepage;
 
 use Magento\Checkout\Block\Checkout\LayoutProcessorInterface;
 use Magento\Framework\Exception\LocalizedException;
 use Magento\Framework\Module\ModuleList;
-use MageWorx\Checkout\Api\LayoutModifierAccessInterface;
-use MageWorx\Checkout\Api\CartManagerInterface;
+use Wheelpros\Checkout\Api\LayoutModifierAccessInterface;
+use Wheelpros\Checkout\Api\CartManagerInterface;
 
 /**
  * Class LayoutProcessor
@@ -56,7 +53,7 @@ class LayoutProcessor implements LayoutProcessorInterface, LayoutModifierAccessI
     private $request;
 
     /**
-     * @var \MageWorx\Checkout\Api\CheckoutConfigInterface
+     * @var \Wheelpros\Checkout\Api\CheckoutConfigInterface
      */
     private $checkoutConfig;
 
@@ -84,7 +81,7 @@ class LayoutProcessor implements LayoutProcessorInterface, LayoutModifierAccessI
      * @param \Magento\Customer\Model\Options $options
      * @param \Magento\Framework\Event\ManagerInterface $eventManager
      * @param \Magento\Framework\App\Request\Http $request
-     * @param \MageWorx\Checkout\Api\CheckoutConfigInterface $checkoutConfig
+     * @param \Wheelpros\Checkout\Api\CheckoutConfigInterface $checkoutConfig
      * @param CartManagerInterface $cartManager
      * @param array $addressFieldPairs
      */
@@ -95,7 +92,7 @@ class LayoutProcessor implements LayoutProcessorInterface, LayoutModifierAccessI
         \Magento\Customer\Model\Options $options,
         \Magento\Framework\Event\ManagerInterface $eventManager,
         \Magento\Framework\App\Request\Http $request,
-        \MageWorx\Checkout\Api\CheckoutConfigInterface $checkoutConfig,
+        \Wheelpros\Checkout\Api\CheckoutConfigInterface $checkoutConfig,
         CartManagerInterface $cartManager,
         ModuleList $moduleList,
         array $addressFieldPairs = []
@@ -128,7 +125,7 @@ class LayoutProcessor implements LayoutProcessorInterface, LayoutModifierAccessI
         $this->setJsLayout($jsLayout);
 
         $this->eventManager->dispatch(
-            'mageworx_checkout_js_layout_start_processing',
+            'wheelpros_checkout_js_layout_start_processing',
             [
                 'subject' => $this
             ]
@@ -176,11 +173,11 @@ class LayoutProcessor implements LayoutProcessorInterface, LayoutModifierAccessI
         if ($this->isModuleEnabled('Amazon_Payment')) {
             $paymentConfig = &$this->jsLayout['components']['checkout']['children']['steps']['children']['billing-step']
             ['children']['payment'];
-            $paymentConfig['children']['payments-list']['component'] = 'MageWorx_Checkout/js/view/payment/amazon-payment-list';
+            $paymentConfig['children']['payments-list']['component'] = 'Wheelpros_Checkout/js/view/payment/amazon-payment-list';
         }
 
         $this->eventManager->dispatch(
-            'mageworx_checkout_js_layout_end_processing',
+            'wheelpros_checkout_js_layout_end_processing',
             [
                 'subject' => $this
             ]
@@ -213,7 +210,7 @@ class LayoutProcessor implements LayoutProcessorInterface, LayoutModifierAccessI
         )) {
             $jsLayout['components']['checkout']['children']['steps']['children']['shipping-step']
             ['children']['billingAddress']['children']['customer-email'] = [
-                'component' => 'MageWorx_Checkout/js/view/form/element/email',
+                'component' => 'Wheelpros_Checkout/js/view/form/element/email',
                 'namespace' => 'billing-form',
                 'displayArea' => 'customer-email',
             ];
@@ -323,19 +320,19 @@ class LayoutProcessor implements LayoutProcessorInterface, LayoutModifierAccessI
             );
 
             $customerBalanceElement['component'] =
-                'MageWorx_Checkout/js/view/summary/additional-inputs/customer-balance';
+                'Wheelpros_Checkout/js/view/summary/additional-inputs/customer-balance';
             $customerBalanceElement['template']  =
-                'MageWorx_Checkout/summary/additional-inputs/customer-balance';
+                'Wheelpros_Checkout/summary/additional-inputs/customer-balance';
 
             $customerBalanceElement['config']['label']               = __('Store Credit');
             $customerBalanceElement['config']['storeCreditFormName'] = 'checkout.sidebar.additionalInputs.' . $code;
 
             $customerBalanceElement = $this->preprocessElement($code, $customerBalanceElement);
 
-            $customerBalanceTotalsTemplate = 'MageWorx_Checkout/summary/totals/customer-balance';
+            $customerBalanceTotalsTemplate = 'Wheelpros_Checkout/summary/totals/customer-balance';
             $jsLayout['components']['checkout']['children']['sidebar']['children']['summary']['children']['totals']
             ['children']['customerbalance']['config']['template'] = $customerBalanceTotalsTemplate;
-            $customerBalanceTotalsComponent = 'MageWorx_Checkout/js/view/summary/totals/customer-balance';
+            $customerBalanceTotalsComponent = 'Wheelpros_Checkout/js/view/summary/totals/customer-balance';
             $jsLayout['components']['checkout']['children']['sidebar']['children']['summary']['children']['totals']
             ['children']['customerbalance']['component'] = $customerBalanceTotalsComponent;
 
@@ -367,8 +364,8 @@ class LayoutProcessor implements LayoutProcessorInterface, LayoutModifierAccessI
                 ['children']['payment']['children']['afterMethods']['children'][$code]
             );
 
-            $discountCodeElement['component'] = 'MageWorx_Checkout/js/view/summary/additional-inputs/discount';
-            $discountCodeElement['template']  = 'MageWorx_Checkout/summary/additional-inputs/discount';
+            $discountCodeElement['component'] = 'Wheelpros_Checkout/js/view/summary/additional-inputs/discount';
+            $discountCodeElement['template']  = 'Wheelpros_Checkout/summary/additional-inputs/discount';
 
             $discountCodeElement['config']['tooltipMessage'] = $this->checkoutConfig->getCouponCodeTooltip();
 
@@ -404,8 +401,8 @@ class LayoutProcessor implements LayoutProcessorInterface, LayoutModifierAccessI
                 ['children']['payment']['children']['afterMethods']['children'][$code]
             );
 
-            $originalElement['component'] = 'MageWorx_Checkout/js/view/summary/additional-inputs/magento-gift-card';
-            $originalElement['template']  = 'MageWorx_Checkout/summary/additional-inputs/magento-gift-card';
+            $originalElement['component'] = 'Wheelpros_Checkout/js/view/summary/additional-inputs/magento-gift-card';
+            $originalElement['template']  = 'Wheelpros_Checkout/summary/additional-inputs/magento-gift-card';
 
             $originalElement = $this->preprocessElement($code, $originalElement);
 
@@ -444,7 +441,7 @@ class LayoutProcessor implements LayoutProcessorInterface, LayoutModifierAccessI
             foreach ($jsLayout['components']['checkout']['children']['steps']['children']['billing-step']['children']
                      ['payment']['children']['payments-list']['children'] as &$child) {
                 if ($child['component'] === 'Magento_Checkout/js/view/billing-address') {
-                    $child['detailsTemplate'] = 'MageWorx_Checkout/payment-method/billing-address/details';
+                    $child['detailsTemplate'] = 'Wheelpros_Checkout/payment-method/billing-address/details';
                 }
             }
         }
@@ -483,7 +480,7 @@ class LayoutProcessor implements LayoutProcessorInterface, LayoutModifierAccessI
             ['children']['agreements']
         );
         $agreements['displayArea'] = 'after_summary';
-        $agreements['template']    = 'MageWorx_Checkout/checkout-agreements';
+        $agreements['template']    = 'Wheelpros_Checkout/checkout-agreements';
         $agreements['component']   = 'Magento_CheckoutAgreements/js/view/checkout-agreements';
 
         $agreements['config']['agreementsMessage'] = $this->checkoutConfig->getCheckoutAgreementsMessage();
@@ -523,7 +520,7 @@ class LayoutProcessor implements LayoutProcessorInterface, LayoutModifierAccessI
 
             $addressFieldset[$index . '-group'] = [
                 'component' => 'uiComponent',
-                'template'  => 'MageWorx_Checkout/form/row',
+                'template'  => 'Wheelpros_Checkout/form/row',
                 'sortOrder' => $sortOrder,
                 'children'  => [
                     'field-group' => [
@@ -545,9 +542,9 @@ class LayoutProcessor implements LayoutProcessorInterface, LayoutModifierAccessI
         ['shipping-step']['children']['billingAddress']['billingAddressListProvider'] = '${$.name}.billingAddressList';
 
         $billingAddressList = [
-            'component'   => 'MageWorx_Checkout/js/view/billing-address/list',
+            'component'   => 'Wheelpros_Checkout/js/view/billing-address/list',
             'displayArea' => 'billing-address-list',
-            'template'    => 'MageWorx_Checkout/billing-address/list'
+            'template'    => 'Wheelpros_Checkout/billing-address/list'
         ];
         $billingAddressList = $this->preprocessElement('billingAddressList', $billingAddressList);
 
@@ -564,7 +561,7 @@ class LayoutProcessor implements LayoutProcessorInterface, LayoutModifierAccessI
     private function getBillingAddressComponent($elements): array
     {
         return [
-            'component'       => 'MageWorx_Checkout/js/view/billing-address',
+            'component'       => 'Wheelpros_Checkout/js/view/billing-address',
             'displayArea'     => 'billing-address-form',
             'provider'        => 'checkoutProvider',
             'deps'            => 'checkoutProvider',
@@ -642,7 +639,7 @@ class LayoutProcessor implements LayoutProcessorInterface, LayoutModifierAccessI
         }
 
         $route = $this->request->getRouteName();
-        if ($route !== 'mageworx_checkout') {
+        if ($route !== 'wheelpros_checkout') {
             // Do not change anything outside our route
             return false;
         }

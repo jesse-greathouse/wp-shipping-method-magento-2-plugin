@@ -1,6 +1,6 @@
 <?php
 
-namespace MageWorx\Checkout\Api;
+namespace Wheelpros\Checkout\Api;
 
 interface BillingAddressManagementInterface
 {

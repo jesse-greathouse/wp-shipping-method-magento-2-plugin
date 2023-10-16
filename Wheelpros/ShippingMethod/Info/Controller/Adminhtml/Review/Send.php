@@ -1,14 +1,11 @@
 <?php
-/**
- * Copyright © MageWorx. All rights reserved.
- * See LICENSE.txt for license details.
- */
 
-namespace MageWorx\Info\Controller\Adminhtml\Review;
+
+namespace Wheelpros\Info\Controller\Adminhtml\Review;
 
 use Magento\Backend\App\Action\Context;
 use Magento\Framework\Controller\Result\RawFactory;
-use MageWorx\Info\Helper\Data;
+use Wheelpros\Info\Helper\Data;
 
 class Send extends \Magento\Backend\App\Action
 {
@@ -24,20 +21,20 @@ class Send extends \Magento\Backend\App\Action
     protected $helper;
 
     /**
-     * @var \MageWorx\Info\Model\MetaPackageList
+     * @var \Wheelpros\Info\Model\MetaPackageList
      */
     protected $metaPackageList;
 
     /**
      * Send constructor.
      *
-     * @param \MageWorx\Info\Model\MetaPackageList $metaPackageList
+     * @param \Wheelpros\Info\Model\MetaPackageList $metaPackageList
      * @param Data $helper
      * @param Context $context
      * @param RawFactory $resultRawFactory
      */
     public function __construct(
-        \MageWorx\Info\Model\MetaPackageList $metaPackageList,
+        \Wheelpros\Info\Model\MetaPackageList $metaPackageList,
         Data $helper,
         Context $context,
         RawFactory $resultRawFactory

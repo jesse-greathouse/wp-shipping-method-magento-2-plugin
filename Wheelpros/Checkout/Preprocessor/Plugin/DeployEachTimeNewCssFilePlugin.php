@@ -1,10 +1,7 @@
 <?php
-/**
- * Copyright © MageWorx. All rights reserved.
- * See LICENSE.txt for license details.
- */
 
-namespace MageWorx\Checkout\Preprocessor\Plugin;
+
+namespace Wheelpros\Checkout\Preprocessor\Plugin;
 
 use Magento\Framework\App\Filesystem\DirectoryList;
 use Magento\Framework\Exception\FileSystemException;
@@ -46,7 +43,7 @@ class DeployEachTimeNewCssFilePlugin
         \Magento\Framework\App\View\Asset\Publisher $subject,
         \Magento\Framework\View\Asset\LocalInterface $asset
     ) {
-        if ($asset->getModule() === 'MageWorx_Checkout' && $asset->getFilePath() === 'css/main.css') {
+        if ($asset->getModule() === 'Wheelpros_Checkout' && $asset->getFilePath() === 'css/main.css') {
             try {
                 $dir = $this->filesystem->getDirectoryWrite(DirectoryList::STATIC_VIEW);
                 $dir->delete($asset->getPath());

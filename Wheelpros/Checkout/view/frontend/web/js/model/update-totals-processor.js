@@ -1,10 +1,7 @@
-/**
- * Copyright © MageWorx. All rights reserved.
- * See LICENSE.txt for license details.
- */
+
 define([
     'jquery',
-    'MageWorx_Checkout/js/action/update-totals'
+    'Wheelpros_Checkout/js/action/update-totals'
 ], function ($, updateTotalsAction) {
     'use strict';
 

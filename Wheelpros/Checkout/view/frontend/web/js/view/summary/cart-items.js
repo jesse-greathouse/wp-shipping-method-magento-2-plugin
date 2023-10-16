@@ -1,5 +1,5 @@
 /**
- * Copyright © MageWorx All rights reserved.
+ * Copyright © Wheelpros All rights reserved.
  * See COPYING.txt for license details.
  */
 
@@ -20,7 +20,7 @@ define([
 
     return Component.extend({
         defaults: {
-            template: 'MageWorx_Checkout/summary/cart-items'
+            template: 'Wheelpros_Checkout/summary/cart-items'
         },
         totals: totals.totals(),
         items: ko.observable([]),

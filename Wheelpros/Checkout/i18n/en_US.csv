@@ -129,5 +129,5 @@ Payment,Payment
 Discount,Discount
 Shipping,Shipping
 "Not yet calculated","Not yet calculated"
-MageWorx_Checkout/summary/totals/tax,MageWorx_Checkout/summary/totals/tax
+Wheelpros_Checkout/summary/totals/tax,Wheelpros_Checkout/summary/totals/tax
 "Order Total","Order Total"

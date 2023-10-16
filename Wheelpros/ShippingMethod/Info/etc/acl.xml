@@ -1,9 +1,6 @@
 <?xml version="1.0"?>
 <!--
-/**
- * Copyright ©  MageWorx. All rights reserved.
- * See LICENSE.txt for license details.
- */
+
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
     <acl>
@@ -12,8 +9,8 @@
                 <resource id="Magento_Backend::stores">
                     <resource id="Magento_Backend::stores_settings">
                         <resource id="Magento_Config::config">
-                            <resource id="MageWorx_Info::config_notification" title="MageWorx Notification" sortOrder="90"/>
-                            <resource id="MageWorx_Info::config_extensions" title="MageWorx Extensions" sortOrder="95"/>
+                            <resource id="Wheelpros_Info::config_notification" title="Wheelpros Notification" sortOrder="90"/>
+                            <resource id="Wheelpros_Info::config_extensions" title="Wheelpros Extensions" sortOrder="95"/>
                         </resource>
                     </resource>
                 </resource>

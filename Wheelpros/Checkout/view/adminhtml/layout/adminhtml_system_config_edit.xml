@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 /**
- * Copyright © MageWorx All rights reserved.
+ * Copyright © Wheelpros All rights reserved.
  * See COPYING.txt for license details.
  */
 -->
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <head>
-        <script src="MageWorx_Checkout::js/colpick.js"/>
-        <script src="MageWorx_Checkout::js/initializeColorpickers.js"/>
-        <css src="MageWorx_Checkout::css/colpick.css"/>
+        <script src="Wheelpros_Checkout::js/colpick.js"/>
+        <script src="Wheelpros_Checkout::js/initializeColorpickers.js"/>
+        <css src="Wheelpros_Checkout::css/colpick.css"/>
     </head>
 </page>

@@ -1,32 +1,32 @@
 <?xml version="1.0"?>
 <!--
 /**
- * Copyright © MageWorx All rights reserved.
+ * Copyright © Wheelpros All rights reserved.
  * See COPYING.txt for license details.
  */
 -->
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      layout="mageworx_checkout"
+      layout="wheelpros_checkout"
       xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <update handle="checkout_index_index"/>
     <head>
-        <css src="MageWorx_Checkout::css/main.css"/>
-        <css src="MageWorx_Checkout::css/lib/normalize.css"/>
-        <css src="MageWorx_Checkout::css/additional.css"/>
+        <css src="Wheelpros_Checkout::css/main.css"/>
+        <css src="Wheelpros_Checkout::css/lib/normalize.css"/>
+        <css src="Wheelpros_Checkout::css/additional.css"/>
     </head>
     <body>
         <attribute name="class" value="body"/>
         <referenceBlock name="page.main.title" remove="true" />
         <referenceContainer name="after.body.start">
-            <block class="Magento\Framework\View\Element\Template" name="mw.checkout.icons" template="MageWorx_Checkout::html/icons.phtml" />
-            <block class="MageWorx\Checkout\Block\Html\Header" name="mageworx.checkout.header" template="MageWorx_Checkout::html/header.phtml">
-                <block class="MageWorx\Checkout\Block\Html\Header\Breadcrumbs" name="mageworx.checkout.header.breadcrumbs" template="MageWorx_Checkout::html/header/breadcrumbs.phtml" />
+            <block class="Magento\Framework\View\Element\Template" name="mw.checkout.icons" template="Wheelpros_Checkout::html/icons.phtml" />
+            <block class="Wheelpros\Checkout\Block\Html\Header" name="wheelpros.checkout.header" template="Wheelpros_Checkout::html/header.phtml">
+                <block class="Wheelpros\Checkout\Block\Html\Header\Breadcrumbs" name="wheelpros.checkout.header.breadcrumbs" template="Wheelpros_Checkout::html/header/breadcrumbs.phtml" />
                 <arguments>
                     <argument name="jsLayout" xsi:type="array">
                         <item name="components" xsi:type="array">
                             <item name="authentication" xsi:type="array">
                                 <item name="sortOrder" xsi:type="string">1</item>
-                                <item name="component" xsi:type="string">MageWorx_Checkout/js/view/authentication</item>
+                                <item name="component" xsi:type="string">Wheelpros_Checkout/js/view/authentication</item>
                                 <item name="displayArea" xsi:type="string">authentication</item>
                                 <item name="deps" xsi:type="string">checkoutProvider</item>
                                 <item name="children" xsi:type="array">
@@ -44,27 +44,27 @@
             </block>
         </referenceContainer>
         <referenceContainer name="columns.top">
-            <block class="MageWorx\Checkout\Block\Checkout\Onepage\OrderTabs"
+            <block class="Wheelpros\Checkout\Block\Checkout\Onepage\OrderTabs"
                    name="order_tabs"
-                   template="MageWorx_Checkout::html/order_tabs.phtml"
+                   template="Wheelpros_Checkout::html/order_tabs.phtml"
                    before="-">
                 <arguments>
                     <argument name="jsLayout" xsi:type="array">
                         <item name="components" xsi:type="array">
                             <item name="order_tabs" xsi:type="array">
-                                <item name="component" xsi:type="string">MageWorx_Checkout/js/view/order_tabs</item>
-                                <item name="template" xsi:type="string">MageWorx_Checkout/order_tabs</item>
+                                <item name="component" xsi:type="string">Wheelpros_Checkout/js/view/order_tabs</item>
+                                <item name="template" xsi:type="string">Wheelpros_Checkout/order_tabs</item>
                                 <item name="provider" xsi:type="string">checkoutProvider</item>
                                 <item name="deps" xsi:type="string">checkoutProvider</item>
                                 <item name="children" xsi:type="array">
                                     <!-- Overwrite in block -->
                                     <item name="tabs" xsi:type="array">
-                                        <item name="component" xsi:type="string">MageWorx_Checkout/js/view/order_tabs/tabs</item>
+                                        <item name="component" xsi:type="string">Wheelpros_Checkout/js/view/order_tabs/tabs</item>
                                         <item name="displayArea" xsi:type="string">tabs</item>
                                         <item name="children" xsi:type="array">
                                             <item name="delivery" xsi:type="array">
-                                                <item name="component" xsi:type="string">MageWorx_Checkout/js/view/order_tabs/tabs/delivery</item>
-                                                <item name="template" xsi:type="string">MageWorx_Checkout/order_tabs/tabs/delivery</item>
+                                                <item name="component" xsi:type="string">Wheelpros_Checkout/js/view/order_tabs/tabs/delivery</item>
+                                                <item name="template" xsi:type="string">Wheelpros_Checkout/order_tabs/tabs/delivery</item>
                                                 <item name="config" xsi:type="array">
                                                     <item name="deps" xsi:type="array">
                                                         <item name="0" xsi:type="string">checkoutProvider</item>
@@ -81,13 +81,13 @@
                 </arguments>
             </block>
         </referenceContainer>
-        <referenceBlock name="checkout.root" template="MageWorx_Checkout::checkout/type/onepage.phtml">
+        <referenceBlock name="checkout.root" template="Wheelpros_Checkout::checkout/type/onepage.phtml">
             <arguments>
                 <argument name="jsLayout" xsi:type="array">
                     <item name="components" xsi:type="array">
                         <item name="checkout" xsi:type="array">
                             <item name="config" xsi:type="array">
-                                <item name="template" xsi:type="string">MageWorx_Checkout/onepage</item>
+                                <item name="template" xsi:type="string">Wheelpros_Checkout/onepage</item>
                             </item>
                             <item name="children" xsi:type="array">
                                 <item name="steps" xsi:type="array">
@@ -95,14 +95,14 @@
                                         <item name="shipping-step" xsi:type="array">
                                             <item name="children" xsi:type="array">
                                                 <item name="shippingAddress" xsi:type="array">
-                                                    <item name="component" xsi:type="string">MageWorx_Checkout/js/view/shipping-address</item>
+                                                    <item name="component" xsi:type="string">Wheelpros_Checkout/js/view/shipping-address</item>
                                                     <item name="children" xsi:type="array">
                                                         <item name="customer-email" xsi:type="array">
-                                                            <item name="component" xsi:type="string">MageWorx_Checkout/js/view/form/element/email</item>
+                                                            <item name="component" xsi:type="string">Wheelpros_Checkout/js/view/form/element/email</item>
                                                             <item name="namespace" xsi:type="string">delivery-form</item>
                                                         </item>
                                                         <item name="address-list" xsi:type="array">
-                                                            <item name="component" xsi:type="string">MageWorx_Checkout/js/view/shipping-address/list</item>
+                                                            <item name="component" xsi:type="string">Wheelpros_Checkout/js/view/shipping-address/list</item>
                                                             <item name="displayArea" xsi:type="string">address-list</item>
                                                             <item name="config" xsi:type="array">
                                                                 <item name="deps" xsi:type="array">
@@ -112,7 +112,7 @@
                                                             </item>
                                                         </item>
                                                         <item name="shipping-address-fieldset" xsi:type="array">
-                                                            <item name="component" xsi:type="string">MageWorx_Checkout/js/view/shipping-address/fieldset</item>
+                                                            <item name="component" xsi:type="string">Wheelpros_Checkout/js/view/shipping-address/fieldset</item>
                                                             <item name="config" xsi:type="array">
                                                                 <item name="deps" xsi:type="array">
                                                                     <item name="0" xsi:type="string">checkoutProvider</item>
@@ -123,13 +123,13 @@
                                                                 <item name="country_id" xsi:type="array">
                                                                     <item name="sortOrder" xsi:type="number">70</item>
                                                                 </item>
-                                                                <!-- Overwritten in the \MageWorx\Checkout\Block\Checkout\Onepage\LayoutProcessor -->
+                                                                <!-- Overwritten in the \Wheelpros\Checkout\Block\Checkout\Onepage\LayoutProcessor -->
                                                             </item>
                                                         </item>
                                                     </item>
                                                 </item>
                                                 <item name="billingAddress" xsi:type="array">
-                                                    <item name="component" xsi:type="string">MageWorx_Checkout/js/view/billing-address-container</item>
+                                                    <item name="component" xsi:type="string">Wheelpros_Checkout/js/view/billing-address-container</item>
                                                     <item name="config" xsi:type="array">
                                                         <item name="deps" xsi:type="array">
                                                             <item name="0" xsi:type="string">checkoutProvider</item>
@@ -155,7 +155,7 @@
                                                     </item>
                                                 </item>
                                                 <item name="shippingMethods" xsi:type="array">
-                                                    <item name="component" xsi:type="string">MageWorx_Checkout/js/view/shipping-methods</item>
+                                                    <item name="component" xsi:type="string">Wheelpros_Checkout/js/view/shipping-methods</item>
                                                     <item name="config" xsi:type="array">
                                                         <item name="deps" xsi:type="array">
                                                             <item name="0" xsi:type="string">checkoutProvider</item>
@@ -164,7 +164,7 @@
                                                     </item>
                                                     <item name="children" xsi:type="array">
                                                         <item name="price" xsi:type="array">
-                                                            <item name="component" xsi:type="string">MageWorx_Checkout/js/view/shipping_method/price</item>
+                                                            <item name="component" xsi:type="string">Wheelpros_Checkout/js/view/shipping_method/price</item>
                                                             <item name="displayArea" xsi:type="string">price</item>
                                                         </item>
                                                         <item name="shipping_method_additional_data" xsi:type="array">
@@ -188,7 +188,7 @@
                                         <item name="billing-step" xsi:type="array">
                                             <item name="children" xsi:type="array">
                                                 <item name="payment" xsi:type="array">
-                                                    <item name="component" xsi:type="string">MageWorx_Checkout/js/view/payment</item>
+                                                    <item name="component" xsi:type="string">Wheelpros_Checkout/js/view/payment</item>
                                                     <item name="config" xsi:type="array">
                                                         <item name="title" xsi:type="string" translate="true">Payment</item>
                                                         <item name="isVisible" xsi:type="boolean">true</item>
@@ -204,19 +204,19 @@
                                                                     <item name="methods" xsi:type="array">
                                                                         <item name="purchaseorder" xsi:type="array">
                                                                             <item name="config" xsi:type="array">
-                                                                                <item name="template" xsi:type="string">MageWorx_Checkout/payment-method/payments/purchaseorder-form</item>
+                                                                                <item name="template" xsi:type="string">Wheelpros_Checkout/payment-method/payments/purchaseorder-form</item>
                                                                             </item>
-                                                                            <item name="template" xsi:type="string">MageWorx_Checkout/payment-method/payments/purchaseorder-form</item>
+                                                                            <item name="template" xsi:type="string">Wheelpros_Checkout/payment-method/payments/purchaseorder-form</item>
                                                                         </item>
                                                                     </item>
                                                                 </item>
                                                             </item>
                                                         </item>
                                                         <item name="payments-list" xsi:type="array">
-                                                            <item name="component" xsi:type="string">MageWorx_Checkout/js/view/payment/list</item>
+                                                            <item name="component" xsi:type="string">Wheelpros_Checkout/js/view/payment/list</item>
                                                             <item name="displayArea" xsi:type="string">payment-methods-list</item>
                                                             <item name="config" xsi:type="array">
-                                                                <item name="template" xsi:type="string">MageWorx_Checkout/payment-method/list</item>
+                                                                <item name="template" xsi:type="string">Wheelpros_Checkout/payment-method/list</item>
                                                                 <item name="deps" xsi:type="array">
                                                                     <item name="0" xsi:type="string">checkout.steps.billing-step.payment.renders</item>
                                                                     <item name="1" xsi:type="string">checkout.steps.billing-step.payment.additional-payment-validators</item>
@@ -240,12 +240,12 @@
                                                     </item>
                                                 </item>
                                                 <item name="order_comment" xsi:type="array">
-                                                    <item name="component" xsi:type="string">MageWorx_Checkout/js/view/order_comment</item>
+                                                    <item name="component" xsi:type="string">Wheelpros_Checkout/js/view/order_comment</item>
                                                     <item name="displayArea" xsi:type="string">order_comment</item>
                                                     <item name="config" xsi:type="array">
                                                         <item name="title" xsi:type="string" translate="true">Order Comment</item>
                                                         <item name="visible" xsi:type="boolean">true</item>
-                                                        <item name="template" xsi:type="string">MageWorx_Checkout/order_comment</item>
+                                                        <item name="template" xsi:type="string">Wheelpros_Checkout/order_comment</item>
                                                     </item>
                                                 </item>
                                             </item>
@@ -254,10 +254,10 @@
                                 </item>
                                 <item name="sidebar" xsi:type="array">
                                     <item name="sortOrder" xsi:type="string">50</item>
-                                    <item name="component" xsi:type="string">MageWorx_Checkout/js/view/sidebar</item>
+                                    <item name="component" xsi:type="string">Wheelpros_Checkout/js/view/sidebar</item>
                                     <item name="displayArea" xsi:type="string">sidebar</item>
                                     <item name="config" xsi:type="array">
-                                        <item name="template" xsi:type="string">MageWorx_Checkout/sidebar</item>
+                                        <item name="template" xsi:type="string">Wheelpros_Checkout/sidebar</item>
                                         <item name="deps" xsi:type="array">
                                             <item name="0" xsi:type="string">checkout.steps</item>
                                         </item>
@@ -267,7 +267,7 @@
                                             <item name="component" xsi:type="string">Magento_Checkout/js/view/summary</item>
                                             <item name="displayArea" xsi:type="string">summary</item>
                                             <item name="config" xsi:type="array">
-                                                <item name="template" xsi:type="string">MageWorx_Checkout/summary</item>
+                                                <item name="template" xsi:type="string">Wheelpros_Checkout/summary</item>
                                             </item>
                                             <item name="children" xsi:type="array">
                                                 <item name="itemsBefore" xsi:type="array">
@@ -278,34 +278,34 @@
                                                     </item>
                                                 </item>
                                                 <item name="cart_items" xsi:type="array">
-                                                    <item name="component" xsi:type="string">MageWorx_Checkout/js/view/summary/cart-items</item>
+                                                    <item name="component" xsi:type="string">Wheelpros_Checkout/js/view/summary/cart-items</item>
                                                     <item name="sortOrder" xsi:type="string">20</item>
                                                     <item name="children" xsi:type="array">
                                                         <item name="details" xsi:type="array">
                                                             <item name="component" xsi:type="string">Magento_Checkout/js/view/summary/item/details</item>
                                                             <item name="config" xsi:type="array">
-                                                                <item name="template" xsi:type="string">MageWorx_Checkout/summary/item/details</item>
+                                                                <item name="template" xsi:type="string">Wheelpros_Checkout/summary/item/details</item>
                                                             </item>
                                                             <item name="children" xsi:type="array">
                                                                 <item name="thumbnail" xsi:type="array">
                                                                     <item name="component" xsi:type="string">Magento_Checkout/js/view/summary/item/details/thumbnail</item>
                                                                     <item name="displayArea" xsi:type="string">before_details</item>
                                                                     <item name="config" xsi:type="array">
-                                                                        <item name="template" xsi:type="string">MageWorx_Checkout/summary/item/details/thumbnail</item>
+                                                                        <item name="template" xsi:type="string">Wheelpros_Checkout/summary/item/details/thumbnail</item>
                                                                     </item>
                                                                 </item>
                                                                 <item name="subtotal" xsi:type="array">
                                                                     <item name="component" xsi:type="string">Magento_Tax/js/view/checkout/summary/item/details/subtotal</item>
                                                                     <item name="displayArea" xsi:type="string">after_details</item>
                                                                     <item name="config" xsi:type="array">
-                                                                        <item name="template" xsi:type="string">MageWorx_Checkout/summary/item/details/subtotal</item>
+                                                                        <item name="template" xsi:type="string">Wheelpros_Checkout/summary/item/details/subtotal</item>
                                                                     </item>
                                                                 </item>
                                                                 <item name="message" xsi:type="array">
                                                                     <item name="component" xsi:type="string">Magento_Checkout/js/view/summary/item/details/message</item>
                                                                     <item name="displayArea" xsi:type="string">item_message</item>
                                                                     <item name="config" xsi:type="array">
-                                                                        <item name="template" xsi:type="string">MageWorx_Checkout/summary/item/details/message</item>
+                                                                        <item name="template" xsi:type="string">Wheelpros_Checkout/summary/item/details/message</item>
                                                                     </item>
                                                                 </item>
                                                             </item>
@@ -324,28 +324,28 @@
                                                     <item name="sortOrder" xsi:type="string">40</item>
                                                     <item name="displayArea" xsi:type="string">totals</item>
                                                     <item name="config" xsi:type="array">
-                                                        <item name="template" xsi:type="string">MageWorx_Checkout/summary/totals</item>
+                                                        <item name="template" xsi:type="string">Wheelpros_Checkout/summary/totals</item>
                                                     </item>
                                                     <item name="children" xsi:type="array">
                                                         <!-- sort order for this totals is configured on admin panel-->
                                                         <!-- Stores->Configuration->SALES->Sales->General->Checkout Totals Sort Order -->
                                                         <item name="subtotal" xsi:type="array">
-                                                            <item name="component" xsi:type="string">MageWorx_Checkout/js/view/summary/totals/subtotal</item>
+                                                            <item name="component" xsi:type="string">Wheelpros_Checkout/js/view/summary/totals/subtotal</item>
                                                             <item name="config" xsi:type="array">
                                                                 <item name="title" xsi:type="string" translate="true">Cart Subtotal</item>
                                                             </item>
                                                         </item>
                                                         <item name="discount" xsi:type="array">
-                                                            <item name="component" xsi:type="string">MageWorx_Checkout/js/view/summary/totals/discount</item>
+                                                            <item name="component" xsi:type="string">Wheelpros_Checkout/js/view/summary/totals/discount</item>
                                                             <item name="config" xsi:type="array">
                                                                 <item name="title" xsi:type="string" translate="true">Discount</item>
                                                             </item>
                                                         </item>
                                                         <item name="giftCardAccount" xsi:type="array">
-                                                            <item name="template" xsi:type="string">MageWorx_Checkout/summary/totals/gift-card-magento</item>
+                                                            <item name="template" xsi:type="string">Wheelpros_Checkout/summary/totals/gift-card-magento</item>
                                                         </item>
                                                         <item name="shipping" xsi:type="array">
-                                                            <item name="component" xsi:type="string">MageWorx_Checkout/js/view/summary/totals/shipping</item>
+                                                            <item name="component" xsi:type="string">Wheelpros_Checkout/js/view/summary/totals/shipping</item>
                                                             <item name="config" xsi:type="array">
                                                                 <item name="title" xsi:type="string" translate="true">Shipping</item>
                                                                 <item name="notCalculatedMessage" xsi:type="string" translate="true">Not yet calculated</item>
@@ -353,8 +353,8 @@
                                                         </item>
                                                         <item name="tax" xsi:type="array">
                                                             <item name="config" xsi:type="array">
-                                                                <item name="component" xsi:type="string">MageWorx_Checkout/js/view/summary/totals/tax</item>
-                                                                <item name="template" xsi:type="string" translate="true">MageWorx_Checkout/summary/totals/tax</item>
+                                                                <item name="component" xsi:type="string">Wheelpros_Checkout/js/view/summary/totals/tax</item>
+                                                                <item name="template" xsi:type="string" translate="true">Wheelpros_Checkout/summary/totals/tax</item>
                                                             </item>
                                                         </item>
                                                     </item>
@@ -364,9 +364,9 @@
 
                                         <!-- Additional blocks (fees, donations etc. -->
                                         <item name="additionalInputs" xsi:type="array">
-                                            <item name="component" xsi:type="string">MageWorx_Checkout/js/view/summary/additional-inputs</item>
+                                            <item name="component" xsi:type="string">Wheelpros_Checkout/js/view/summary/additional-inputs</item>
                                             <item name="displayArea" xsi:type="string">additional_inputs</item>
-                                            <item name="template" xsi:type="string">MageWorx_Checkout/summary/additional-inputs</item>
+                                            <item name="template" xsi:type="string">Wheelpros_Checkout/summary/additional-inputs</item>
                                             <item name="sortOrder" xsi:type="string">50</item>
                                             <item name="children" xsi:type="array">
                                                 <!-- merge your components here -->
@@ -375,7 +375,7 @@
 
                                         <!-- Grand total -->
                                         <item name="grand-total" xsi:type="array">
-                                            <item name="component" xsi:type="string">MageWorx_Checkout/js/view/summary/totals/grand-total</item>
+                                            <item name="component" xsi:type="string">Wheelpros_Checkout/js/view/summary/totals/grand-total</item>
                                             <item name="displayArea" xsi:type="string">after_summary</item>
                                             <item name="sortOrder" xsi:type="string">60</item>
                                             <item name="config" xsi:type="array">
@@ -388,14 +388,14 @@
 
                                         <!-- Checkboxes newsletter subscriptions -->
                                         <item name="newsletter-subscription" xsi:type="array">
-                                            <item name="component" xsi:type="string">MageWorx_Checkout/js/view/summary/newsletter-subscription</item>
+                                            <item name="component" xsi:type="string">Wheelpros_Checkout/js/view/summary/newsletter-subscription</item>
                                             <item name="displayArea" xsi:type="string">after_summary</item>
                                             <item name="sortOrder" xsi:type="string">70</item>
                                         </item>
 
                                         <!-- Place Order button -->
                                         <item name="place-order" xsi:type="array">
-                                            <item name="component" xsi:type="string">MageWorx_Checkout/js/view/summary/place-order</item>
+                                            <item name="component" xsi:type="string">Wheelpros_Checkout/js/view/summary/place-order</item>
                                             <item name="displayArea" xsi:type="string">after_summary</item>
                                             <item name="sortOrder" xsi:type="string">100</item>
                                         </item>

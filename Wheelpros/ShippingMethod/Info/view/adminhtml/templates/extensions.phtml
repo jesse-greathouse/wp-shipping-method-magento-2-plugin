@@ -1,46 +1,46 @@
 <?php
-/** @var \MageWorx\Info\Block\Adminhtml\Extensions $block */
+/** @var \Wheelpros\Info\Block\Adminhtml\Extensions $block */
 $recommendedExts = $block->getRecommendedExtensionsData();
 $installedExts   = $block->getInstalledExtensionsData();
 ?>
 
-<div class="entry-edit-head-mageworx">
+<div class="entry-edit-head-wheelpros">
     <span class="entry-edit-head-link"></span>
     <a><?php echo __('My extensions') ?></a>
 </div>
 <?php if (count($recommendedExts)) : ?>
-    <div id="mageworx-installed-extenstions">
-        <div class="mw-ext-container">
-            <h3 class="mw-ext__heading mw-ext__heading--recommended"><?php echo __(
+    <div id="wheelpros-installed-extenstions">
+        <div class="wp-ext-container">
+            <h3 class="wp-ext__heading wp-ext__heading--recommended"><?php echo __(
                     'Extensions Recommended for Your Store'
                 ) ?></h3>
-            <p class="mw-ext__desc">
+            <p class="wp-ext__desc">
                 <?php echo __(
                     'These are the extensions that will help you enhance your customers shopping experience and improve your store sales performance.'
                 ) ?></p>
-            <div class="mw-ext__grid">
+            <div class="wp-ext__grid">
                 <?php foreach ($recommendedExts as $code => $extension) :
                     if (key_exists($code, $installedExts)) {
                         continue;
                     } ?>
-                    <div class="mw-ext__grid__item">
-                        <div class="mw-ext__grid__item__image">
+                    <div class="wp-ext__grid__item">
+                        <div class="wp-ext__grid__item__image">
                             <a href="<?php echo $block->escapeUrl($block->getExtensionUrl($extension)) ?>"
                                target="_blank">
                                 <img src="<?php echo $block->escapeUrl($extension->getImage()) ?>"
                                      alt="<?php echo $block->escapeHtml($extension->getTitle()) ?>">
                             </a>
                         </div>
-                        <div class="mw-ext__grid__item__content">
-                            <h4 class="mw-ext__grid__item__name">
+                        <div class="wp-ext__grid__item__content">
+                            <h4 class="wp-ext__grid__item__name">
                                 <a href="<?php echo $block->escapeUrl($block->getExtensionUrl($extension)) ?>"
                                    target="_blank">
                                     <?php echo $block->escapeHtml($extension->getTitle()) ?>
                                 </a>
                             </h4>
                             <?php if ($extension->getReviewCount()): ?>
-                                <div class="mw-ext__grid__item__rating">
-                                    <div class="mw-ext__grid__item__rating-icon">
+                                <div class="wp-ext__grid__item__rating">
+                                    <div class="wp-ext__grid__item__rating-icon">
                                         <svg
                                             fill="none"
                                             height="15"
@@ -55,25 +55,25 @@ $installedExts   = $block->getInstalledExtensionsData();
                                         </svg>
                                     </div>
 
-                                    <div class="mw-ext__grid__item__rating-text">
+                                    <div class="wp-ext__grid__item__rating-text">
                                     <span
-                                        class="mw-ext__grid__item__rating-text-rating"
+                                        class="wp-ext__grid__item__rating-text-rating"
                                     ><?= $block->escapeHtml(number_format($extension->getRating() / 20, 1, '.', '')) ?></span
                                     >
                                         <span
-                                            class="mw-ext__grid__item__rating-text-summary"
+                                            class="wp-ext__grid__item__rating-text-summary"
                                         >(<?= $block->escapeHtml(
                                                 $extension->getReviewCount()
                                             ) ?></span> <?php echo __('reviews') ?>)</span>
                                     </div>
                                 </div>
 
-                                <div class="mw-ext__grid__item__price">
+                                <div class="wp-ext__grid__item__price">
                                     <?php if ($extension->getSpecialPrice()): ?>
-                                        <span class="mw-ext__grid__item__price_line-through">$<?php echo $block->escapeHtml(
+                                        <span class="wp-ext__grid__item__price_line-through">$<?php echo $block->escapeHtml(
                                                 $extension->getPrice()
                                             ) ?></span>
-                                        <span class="mw-ext__grid__item__special_price"> $<?php echo $block->escapeHtml(
+                                        <span class="wp-ext__grid__item__special_price"> $<?php echo $block->escapeHtml(
                                                 $extension->getSpecialPrice()
                                             ) ?></span>
                                     <?php else: ?>
@@ -82,7 +82,7 @@ $installedExts   = $block->getInstalledExtensionsData();
                                 </div>
                             <?php endif; ?>
                             <a href="<?php echo $block->escapeUrl($block->getExtensionUrl($extension)) ?>"
-                               class="mw-ext__grid__item__button" target="_blank"><?php echo __('Get it') ?></a>
+                               class="wp-ext__grid__item__button" target="_blank"><?php echo __('Get it') ?></a>
                         </div>
                     </div>
                 <?php endforeach; ?>
@@ -90,38 +90,38 @@ $installedExts   = $block->getInstalledExtensionsData();
         </div>
     </div>
 <?php endif; ?>
-<div id="mageworx-installed-extenstions">
+<div id="wheelpros-installed-extenstions">
 
-    <div id="mageworx-purchased-extenstions">
-        <div class="mw-ext-container">
-            <h3 class="mw-ext__heading mw-ext__heading">
+    <div id="wheelpros-purchased-extenstions">
+        <div class="wp-ext-container">
+            <h3 class="wp-ext__heading wp-ext__heading">
                 <?= __("My Purchased Extensions") ?>
             </h3>
-            <p class="mw-ext__desc">
+            <p class="wp-ext__desc">
                 <?= __(
-                    "These are the MageWorx extensions you've purchased. If you enjoy using our products,
+                    "These are the Wheelpros extensions you've purchased. If you enjoy using our products,
                      would you mind taking a moment to rate them? It won't take you more than a minute."
                 ) ?>
             </p>
             <strong>
-                <a href="<?= $block->escapeUrl($block->getUrl("mageworx_info/extensionInfo/update", [])); ?>"
-                   class="mw-ext__refresh"><?= __('Update Info') ?></a>
+                <a href="<?= $block->escapeUrl($block->getUrl("wheelpros_info/extensionInfo/update", [])); ?>"
+                   class="wp-ext__refresh"><?= __('Update Info') ?></a>
             </strong>
 
             <?php if (count($installedExts)) : ?>
-            <div class="mw-ext__grid">
+            <div class="wp-ext__grid">
                 <?php foreach ($installedExts as $code => $extension) : ?>
-                <div class="mw-ext__grid__item mw-ext__grid__item--purchased">
-                    <div class="mw-ext__grid__item__image">
+                <div class="wp-ext__grid__item wp-ext__grid__item--purchased">
+                    <div class="wp-ext__grid__item__image">
                         <a href="<?= $block->escapeUrl($block->getExtensionUrl($extension)) ?>"
                            target="_blank">
                             <img src="<?= $block->escapeUrl($extension->getImage()) ?>"
                                  alt="<?= $block->escapeHtml($extension->getTitle()) ?>">
                         </a>
                     </div>
-                    <div class="mw-ext__grid__item__content">
-                        <div class="mw-ext__grid__item__content-left">
-                            <h4 class="mw-ext__grid__item__name">
+                    <div class="wp-ext__grid__item__content">
+                        <div class="wp-ext__grid__item__content-left">
+                            <h4 class="wp-ext__grid__item__name">
                                 <a href="<?php echo $block->escapeUrl($block->getExtensionUrl($extension)) ?>"
                                    target="_blank">
                                     <?php echo $block->escapeHtml($extension->getTitle()) . ' ' . $block->escapeHtml(
@@ -129,7 +129,7 @@ $installedExts   = $block->getInstalledExtensionsData();
                                         ) ?>
                                 </a>
                             </h4>
-                            <p class="mw-ext__grid__item__text">
+                            <p class="wp-ext__grid__item__text">
                                 <?php if (version_compare(
                                     $extension->getVersion(),
                                     $block->getExtensionVersion($code),
@@ -138,32 +138,32 @@ $installedExts   = $block->getInstalledExtensionsData();
                                     echo __(' Version %1 available!', $extension->getVersion());
                                     ?>
                                 <?php else: ?>
-                                    <span class="mw-latest-version"> <?= __('Latest version'); ?> </span>
+                                    <span class="wp-latest-version"> <?= __('Latest version'); ?> </span>
                                 <?php endif; ?>
                             </p>
                             <a href="<?php echo $block->escapeUrl($block->getExtensionChangelogUrl($extension)) ?>"
                                target="_blank"><?php echo __('See Change Log') ?></a>
                         </div>
-                        <div class="mw-ext__grid__item__content-center">
+                        <div class="wp-ext__grid__item__content-center">
                             <?php if ($extension->getUserGuide()): ?>
                             <a href="<?= $block->escapeHtml($extension->getUserGuide()) ?>"
                                target="_blank"><?= __('User Guide') ?></a>
                             <?php endif; ?>
                         </div>
-                        <div class="mw-ext__grid__item__content-right">
+                        <div class="wp-ext__grid__item__content-right">
                             <span><?= __("Rate it") ?>:</span>
-                            <div class="mw-ext__rate" id="<?php echo $block->escapeHtml($code) ?>" data-mage-init='{"mw-review-modal": {"target": "#mwReviewPopup", "dataUrl": "<?php echo $block->getBaseUrl(
+                            <div class="wp-ext__rate" id="<?php echo $block->escapeHtml($code) ?>" data-mage-init='{"wp-review-modal": {"target": "#mwReviewPopup", "dataUrl": "<?php echo $block->getBaseUrl(
                             ); ?>"}}'>
                                 <input
-                                    class="mw-ext__rate__input"
-                                    id="mw-ext__rate__input-5__<?php echo $block->escapeHtml($code) ?>"
+                                    class="wp-ext__rate__input"
+                                    id="wp-ext__rate__input-5__<?php echo $block->escapeHtml($code) ?>"
                                     type="radio"
                                     name="rating"
                                     value="5"
                                 />
                                 <label
-                                    class="mw-ext__rate__star"
-                                    for="mw-ext__rate__input-5__<?php echo $block->escapeHtml($code) ?>"
+                                    class="wp-ext__rate__star"
+                                    for="wp-ext__rate__input-5__<?php echo $block->escapeHtml($code) ?>"
                                 >
                                     <svg
                                         fill="none"
@@ -180,15 +180,15 @@ $installedExts   = $block->getInstalledExtensionsData();
                                     </svg>
                                 </label>
                                 <input
-                                    class="mw-ext__rate__input"
-                                    id="mw-ext__rate__input-4__<?php echo $block->escapeHtml($code) ?>"
+                                    class="wp-ext__rate__input"
+                                    id="wp-ext__rate__input-4__<?php echo $block->escapeHtml($code) ?>"
                                     type="radio"
                                     name="rating"
                                     value="4"
                                 />
                                 <label
-                                    class="mw-ext__rate__star"
-                                    for="mw-ext__rate__input-4__<?php echo $block->escapeHtml($code) ?>"
+                                    class="wp-ext__rate__star"
+                                    for="wp-ext__rate__input-4__<?php echo $block->escapeHtml($code) ?>"
                                 >
                                     <svg
                                         fill="none"
@@ -205,15 +205,15 @@ $installedExts   = $block->getInstalledExtensionsData();
                                     </svg>
                                 </label>
                                 <input
-                                    class="mw-ext__rate__input"
-                                    id="mw-ext__rate__input-3__<?php echo $block->escapeHtml($code) ?>"
+                                    class="wp-ext__rate__input"
+                                    id="wp-ext__rate__input-3__<?php echo $block->escapeHtml($code) ?>"
                                     type="radio"
                                     name="rating"
                                     value="3"
                                 />
                                 <label
-                                    class="mw-ext__rate__star"
-                                    for="mw-ext__rate__input-3__<?php echo $block->escapeHtml($code) ?>"
+                                    class="wp-ext__rate__star"
+                                    for="wp-ext__rate__input-3__<?php echo $block->escapeHtml($code) ?>"
                                 >
                                     <svg
                                         fill="none"
@@ -230,15 +230,15 @@ $installedExts   = $block->getInstalledExtensionsData();
                                     </svg>
                                 </label>
                                 <input
-                                    class="mw-ext__rate__input"
-                                    id="mw-ext__rate__input-2__<?php echo $block->escapeHtml($code) ?>"
+                                    class="wp-ext__rate__input"
+                                    id="wp-ext__rate__input-2__<?php echo $block->escapeHtml($code) ?>"
                                     type="radio"
                                     name="rating"
                                     value="2"
                                 />
                                 <label
-                                    class="mw-ext__rate__star"
-                                    for="mw-ext__rate__input-2__<?php echo $block->escapeHtml($code) ?>"
+                                    class="wp-ext__rate__star"
+                                    for="wp-ext__rate__input-2__<?php echo $block->escapeHtml($code) ?>"
                                 >
                                     <svg
                                         fill="none"
@@ -255,15 +255,15 @@ $installedExts   = $block->getInstalledExtensionsData();
                                     </svg>
                                 </label>
                                 <input
-                                    class="mw-ext__rate__input"
-                                    id="mw-ext__rate__input-1__<?php echo $block->escapeHtml($code) ?>"
+                                    class="wp-ext__rate__input"
+                                    id="wp-ext__rate__input-1__<?php echo $block->escapeHtml($code) ?>"
                                     type="radio"
                                     name="rating"
                                     value="1"
                                 />
                                 <label
-                                    class="mw-ext__rate__star"
-                                    for="mw-ext__rate__input-1__<?php echo $block->escapeHtml($code) ?>"
+                                    class="wp-ext__rate__star"
+                                    for="wp-ext__rate__input-1__<?php echo $block->escapeHtml($code) ?>"
                                 >
                                     <svg
                                         fill="none"
@@ -296,7 +296,7 @@ $installedExts   = $block->getInstalledExtensionsData();
     ], function ($) {
 
         var reviewLinks = JSON.parse('<?php echo json_encode($block->prepareMarketplaceReviewUrls($installedExts))?>');
-        $('.mw-ext__rate').click(function (event) {
+        $('.wp-ext__rate').click(function (event) {
             var val = $(event.target).val();
             var id = $(event.target).closest('div').attr('id');
 
@@ -304,12 +304,12 @@ $installedExts   = $block->getInstalledExtensionsData();
                 if (val < 4) {
                     $('#mwReviewPopup .modal-content').show();
                     $('#mwReviewPopup .modal-content-2').hide();
-                    $('.mw-ext__submit__button').show();
+                    $('.wp-ext__submit__button').show();
                 } else {
                     $('#mwReviewPopup .modal-content').hide();
-                    $('.mw-ext__submit__button').hide();
+                    $('.wp-ext__submit__button').hide();
                     if (reviewLinks[id]) {
-                        $('#mw-marketplace-link').attr("href", reviewLinks[id]);
+                        $('#wp-marketplace-link').attr("href", reviewLinks[id]);
                         $('#mwReviewPopup .modal-content-2').show();
                     } else {
                         $('#mwReviewPopup .modal-content-2').hide();

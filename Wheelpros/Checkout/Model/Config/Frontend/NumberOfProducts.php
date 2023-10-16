@@ -1,10 +1,7 @@
 <?php
-/**
- * Copyright © MageWorx. All rights reserved.
- * See LICENSE.txt for license details.
- */
 
-namespace MageWorx\Checkout\Model\Config\Frontend;
+
+namespace Wheelpros\Checkout\Model\Config\Frontend;
 
 use Magento\Store\Model\ScopeInterface;
 

@@ -1,17 +1,17 @@
 <?php
 /**
- * Copyright © MageWorx, Inc. All rights reserved.
+ * Copyright © Wheelpros, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 ?>
 <?php
 /**
- * @var $block \MageWorx\Checkout\Block\Html\Header
+ * @var $block \Wheelpros\Checkout\Block\Html\Header
  */
 ?>
 <header class="header">
     <div class="page__section">
-        <?= $block->getChildHtml('mageworx.checkout.header.breadcrumbs'); ?>
+        <?= $block->getChildHtml('wheelpros.checkout.header.breadcrumbs'); ?>
         <div class="headline">
             <h1 class="page__title headline__left"><?= $block->escapeHtml($block->getCheckoutTitle()); ?></h1>
             <div id="authentication" data-bind="scope:'authentication'">

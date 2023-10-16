@@ -7,7 +7,7 @@ define([
         'Magento_Customer/js/model/address-list',
         'Magento_Checkout/js/model/address-converter',
         'Magento_Checkout/js/model/quote',
-        'MageWorx_Checkout/js/action/select-shipping-address',
+        'Wheelpros_Checkout/js/action/select-shipping-address',
         'Magento_Checkout/js/model/shipping-address/form-popup-state',
         'Magento_Checkout/js/model/shipping-service',
         'Magento_Checkout/js/action/select-shipping-method',
@@ -16,7 +16,7 @@ define([
         'Magento_Checkout/js/model/payment/additional-validators',
         'Magento_Checkout/js/model/shipping-rate-service',
         'Magento_Checkout/js/model/shipping-save-processor',
-        'MageWorx_Checkout/js/model/shipping-rate-processor/general',
+        'Wheelpros_Checkout/js/model/shipping-rate-processor/general',
         'rjsResolver',
         'Magento_Checkout/js/checkout-data',
         'uiRegistry',
@@ -54,9 +54,9 @@ define([
 
         return Component.extend({
             defaults: {
-                template: 'MageWorx_Checkout/container/shipping-methods',
-                shippingMethodListTemplate: 'MageWorx_Checkout/shipping-method/list',
-                shippingMethodItemTemplate: 'MageWorx_Checkout/shipping-method/item',
+                template: 'Wheelpros_Checkout/container/shipping-methods',
+                shippingMethodListTemplate: 'Wheelpros_Checkout/shipping-method/list',
+                shippingMethodItemTemplate: 'Wheelpros_Checkout/shipping-method/item',
                 label: $t('Shipping Method'),
                 sectionIndex: 2,
                 imports: {

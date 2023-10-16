@@ -1,4 +1,4 @@
-.admin__page-nav-item.mageworx-extensions a:after {
+.admin__page-nav-item.wheelpros-extensions a:after {
     color: #eb5202;
     content: '\e623';
     background: none;
@@ -19,7 +19,7 @@
     margin-top: 5px;
 }
 
-.entry-edit-head-mageworx a{
+.entry-edit-head-wheelpros a{
     clear: both;
     color: #303030!important;
     display: block;
@@ -32,14 +32,14 @@
     transition: color .15s linear;
 }
 
-.mw-user-guide {
+.wp-user-guide {
     margin-bottom: 10px;
 }
-.mw-new-version {
+.wp-new-version {
     color: #1e7e26;
 }
 
-.mw-new-version a, .mw-user-guide a{
+.wp-new-version a, .wp-user-guide a{
     clear: both;
     color: #303030!important;
     display: block;
@@ -52,12 +52,12 @@
     margin-bottom: 10px;
 }
 
-#mageworx-installed-extenstions .mw-ext__grid__item__name a {
+#wheelpros-installed-extenstions .wp-ext__grid__item__name a {
     color: #41362f!important;
     text-decoration: none!important;
 }
 
-.mw-ext__grid__item__price_line-through {
+.wp-ext__grid__item__price_line-through {
     text-decoration: line-through;
 }
 
@@ -70,41 +70,41 @@
 }
 
 
-.mw-ext__grid__installed {
+.wp-ext__grid__installed {
     justify-content: flex-start!important;
 }
 
-.mageworx-modal-review {
+.wheelpros-modal-review {
     text-align: center;
     left: 20%;
     width: 60%;
 }
 
-.mageworx-modal-review .text{
+.wheelpros-modal-review .text{
     margin-top: 20px;
     margin-bottom: 20px;
 }
 
-.mageworx-modal-review .modal-title{
+.wheelpros-modal-review .modal-title{
     padding-left: 10%;
 }
 
-.mageworx-modal-review a{
+.wheelpros-modal-review a{
     color: #eb5202;
 }
 
-.mageworx-modal-review a:focus, .mageworx-modal-review a:hover{
+.wheelpros-modal-review a:focus, .wheelpros-modal-review a:hover{
     color: #ba4000;
 }
 
-.mw-ext__submit__button {
+.wp-ext__submit__button {
     background-color: #eb5202;
     border-color: #eb5202;
     color: #ffffff;
     text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.25);
 }
 
-.mw-ext__submit__button :focus, .mw-ext__submit__button:hover {
+.wp-ext__submit__button :focus, .wp-ext__submit__button:hover {
     background-color: #ba4000;
     border-color: #b84002;
     box-shadow: 0 0 0 1px #007bdb;

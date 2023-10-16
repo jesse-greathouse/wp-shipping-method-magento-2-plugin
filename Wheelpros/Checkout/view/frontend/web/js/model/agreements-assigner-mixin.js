@@ -1,5 +1,5 @@
 /**
- * Copyright © MageWorx. All rights reserved.
+ * Copyright © Wheelpros. All rights reserved.
  * See COPYING.txt for license details.
  */
 
@@ -16,7 +16,7 @@ define([
     return function (originalAction) {
         return wrapper.wrap(originalAction, function (originalAssignAgreementIdsFunction, paymentData) {
             originalAssignAgreementIdsFunction(paymentData);
-            if (window.isMageWorxCheckout) {
+            if (window.isWheelprosCheckout) {
                 var agreementsConfig = window.checkoutConfig.checkoutAgreements,
                     agreementForm,
                     agreementData,

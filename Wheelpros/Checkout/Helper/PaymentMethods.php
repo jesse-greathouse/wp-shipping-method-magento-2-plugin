@@ -1,10 +1,7 @@
 <?php
-/**
- * Copyright © MageWorx. All rights reserved.
- * See LICENSE.txt for license details.
- */
 
-namespace MageWorx\Checkout\Helper;
+
+namespace Wheelpros\Checkout\Helper;
 
 use Magento\Framework\App\Helper\AbstractHelper;
 use Magento\Framework\App\Helper\Context;
@@ -19,7 +16,7 @@ use Psr\Log\LoggerInterface as Logger;
 
 class PaymentMethods extends AbstractHelper
 {
-    const IMAGE_URL_PATH = '/mageworx/payment_methods/icons/';
+    const IMAGE_URL_PATH = '/wheelpros/payment_methods/icons/';
 
     /**
      * @var \Magento\Framework\Math\Random
@@ -71,7 +68,7 @@ class PaymentMethods extends AbstractHelper
     public function getPaymentMethodsConfiguration(int $storeId = null): array
     {
         $result = $this->scopeConfig->getValue(
-            \MageWorx\Checkout\Api\CheckoutConfigInterface::XML_PATH_PAYMENT_METHOD_IMAGES,
+            \Wheelpros\Checkout\Api\CheckoutConfigInterface::XML_PATH_PAYMENT_METHOD_IMAGES,
             ScopeInterface::SCOPE_STORE,
             $storeId
         );

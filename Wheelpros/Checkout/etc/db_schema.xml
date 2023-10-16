@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <!--
 /**
- * Copyright © MageWorx All rights reserved.
+ * Copyright © Wheelpros All rights reserved.
  * See COPYING.txt for license details.
  */
 -->
 <schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
-    <table name="mageworx_checkout_dummy_data" resource="default" engine="innodb" comment="Dummy data for checkout">
+    <table name="wheelpros_checkout_dummy_data" resource="default" engine="innodb" comment="Dummy data for checkout">
         <column xsi:type="smallint" name="id" padding="6" unsigned="false" nullable="false" identity="true" comment="ID"/>
         <column xsi:type="varchar" name="cart_id" nullable="false" length="32" comment="cart_id"/>
         <column xsi:type="varchar" name="data" nullable="false" length="128" comment="Data"/>
@@ -15,7 +15,7 @@
             <column name="id"/>
         </constraint>
     </table>
-    <table name="mageworx_checkout_order_comments" resource="default" engine="innodb" comment="Order Comments">
+    <table name="wheelpros_checkout_order_comments" resource="default" engine="innodb" comment="Order Comments">
         <column xsi:type="int" name="id" padding="10" unsigned="true" nullable="false" identity="true" comment="ID"/>
         <column xsi:type="int" name="quote_id" padding="10" unsigned="true" nullable="true" comment="Cart ID"/>
         <column xsi:type="int" name="order_id" padding="10" unsigned="true" nullable="true" comment="Order ID"/>
@@ -25,14 +25,14 @@
         </constraint>
         <constraint xsi:type="foreign"
                     referenceId="COMMENT_QUOTE_ID_QUOTE_ENTITY_ID"
-                    table="mageworx_checkout_order_comments"
+                    table="wheelpros_checkout_order_comments"
                     column="quote_id"
                     referenceTable="quote"
                     referenceColumn="entity_id"
                     onDelete="SET NULL"/>
         <constraint xsi:type="foreign"
                     referenceId="COMMENT_ORDER_ID_SALES_ORDER_ENTITY_ID"
-                    table="mageworx_checkout_order_comments"
+                    table="wheelpros_checkout_order_comments"
                     column="order_id"
                     referenceTable="sales_order"
                     referenceColumn="entity_id"

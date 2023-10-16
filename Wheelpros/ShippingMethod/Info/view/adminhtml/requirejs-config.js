@@ -1,7 +1,7 @@
 var config = {
     map: {
         '*': {
-            'mw-review-modal': 'MageWorx_Info/js/mw-review-modal'
+            'wp-review-modal': 'Wheelpros_Info/js/wp-review-modal'
         }
     }
 };

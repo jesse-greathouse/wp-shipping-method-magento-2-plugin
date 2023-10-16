@@ -1,10 +1,7 @@
 <?php
-/**
- * Copyright © MageWorx. All rights reserved.
- * See LICENSE.txt for license details.
- */
 
-namespace MageWorx\Checkout\Helper;
+
+namespace Wheelpros\Checkout\Helper;
 
 use Magento\Customer\Model\AccountManagement;
 use Magento\Framework\App\Helper\AbstractHelper;
@@ -12,8 +9,8 @@ use Magento\Framework\App\Helper\AbstractHelper as MagentoAbstractHelper;
 use Magento\Framework\App\Helper\Context;
 use Magento\Quote\Api\Data\CartInterface;
 use Magento\Store\Model\ScopeInterface;
-use MageWorx\Checkout\Api\CheckoutConfigInterface;
-use MageWorx\Checkout\Helper\PaymentMethods as PaymentMethodsHelper;
+use Wheelpros\Checkout\Api\CheckoutConfigInterface;
+use Wheelpros\Checkout\Helper\PaymentMethods as PaymentMethodsHelper;
 
 /**
  * Class Data

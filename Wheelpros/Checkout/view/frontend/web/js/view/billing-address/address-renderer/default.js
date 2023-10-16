@@ -1,5 +1,5 @@
 /**
- * Copyright © MageWorx All rights reserved.
+ * Copyright © Wheelpros All rights reserved.
  * See COPYING.txt for license details.
  */
 
@@ -26,7 +26,7 @@ define([
 
     return Component.extend({
         defaults: {
-            template: 'MageWorx_Checkout/billing-address/address-renderer/default'
+            template: 'Wheelpros_Checkout/billing-address/address-renderer/default'
         },
         observableProperties: [
             'addressListInstance'

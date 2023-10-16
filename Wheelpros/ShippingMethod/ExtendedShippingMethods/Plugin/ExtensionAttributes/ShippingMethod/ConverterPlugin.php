@@ -1,10 +1,7 @@
 <?php
-/**
- * Copyright © MageWorx. All rights reserved.
- * See LICENSE.txt for license details.
- */
 
-namespace MageWorx\ExtendedShippingMethods\Plugin\ExtensionAttributes\ShippingMethod;
+
+namespace Wheelpros\ExtendedShippingMethods\Plugin\ExtensionAttributes\ShippingMethod;
 
 /**
  * Class ConverterPlugin
@@ -15,17 +12,17 @@ namespace MageWorx\ExtendedShippingMethods\Plugin\ExtensionAttributes\ShippingMe
 class ConverterPlugin
 {
     /**
-     * @var \MageWorx\ExtendedShippingMethods\Model\Processor
+     * @var \Wheelpros\ExtendedShippingMethods\Model\Processor
      */
     private $processor;
 
     /**
      * ConverterPlugin constructor.
      *
-     * @param \MageWorx\ExtendedShippingMethods\Model\Processor $processor
+     * @param \Wheelpros\ExtendedShippingMethods\Model\Processor $processor
      */
     public function __construct(
-        \MageWorx\ExtendedShippingMethods\Model\Processor $processor
+        \Wheelpros\ExtendedShippingMethods\Model\Processor $processor
     ) {
         $this->processor = $processor;
     }

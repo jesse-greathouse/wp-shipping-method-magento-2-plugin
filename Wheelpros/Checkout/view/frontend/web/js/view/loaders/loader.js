@@ -1,7 +1,4 @@
-/**
- * Copyright © MageWorx. All rights reserved.
- * See LICENSE.txt for license details.
- */
+
 
 define([
     'mage/template',
@@ -98,7 +95,7 @@ define([
                 return;
             }
 
-            if (window.isMageWorxCheckout) {
+            if (window.isWheelprosCheckout) {
                 this.spinnerTemplate = mageTemplate(this.options.mwTemplate);
                 html = $(this.spinnerTemplate({data: this.options}));
             } else {

@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace MageWorx\Checkout\Model;
+namespace Wheelpros\Checkout\Model;
 
-class BillingAddressManagement implements \MageWorx\Checkout\Api\BillingAddressManagementInterface
+class BillingAddressManagement implements \Wheelpros\Checkout\Api\BillingAddressManagementInterface
 {
     /**
      * @var \Magento\Checkout\Model\Session

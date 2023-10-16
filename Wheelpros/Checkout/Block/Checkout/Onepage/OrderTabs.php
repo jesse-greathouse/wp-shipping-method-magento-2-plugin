@@ -1,10 +1,7 @@
 <?php
-/**
- * Copyright © MageWorx. All rights reserved.
- * See LICENSE.txt for license details.
- */
 
-namespace MageWorx\Checkout\Block\Checkout\Onepage;
+
+namespace Wheelpros\Checkout\Block\Checkout\Onepage;
 
 use Magento\Framework\Serialize\Serializer\Json as SerializerJson;
 use Magento\Framework\View\Element\Template;

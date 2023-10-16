@@ -1,16 +1,13 @@
-/**
- * Copyright © MageWorx. All rights reserved.
- * See LICENSE.txt for license details.
- */
+
 define(['uiRegistry',  'Magento_Checkout/js/model/quote'], function (registry, quote) {
     'use strict';
 
     return function (origComponent) {
 
-        if (window.isMageWorxCheckout) {
+        if (window.isWheelprosCheckout) {
             return origComponent.extend({
                 defaults: {
-                    template: 'MageWorx_Checkout/payment-method/renderer/new-braintree-paypal'
+                    template: 'Wheelpros_Checkout/payment-method/renderer/new-braintree-paypal'
                 },
 
                 selectPaymentMethod: function () {

@@ -1,10 +1,7 @@
 <?php
-/**
- * Copyright © MageWorx. All rights reserved.
- * See LICENSE.txt for license details.
- */
 
-namespace MageWorx\ExtendedShippingMethods\Model;
+
+namespace Wheelpros\ExtendedShippingMethods\Model;
 
 /**
  * Class Processor
@@ -15,14 +12,14 @@ namespace MageWorx\ExtendedShippingMethods\Model;
 class Processor
 {
     /**
-     * @var \MageWorx\ExtendedShippingMethods\Api\DataProcessorInterface[]
+     * @var \Wheelpros\ExtendedShippingMethods\Api\DataProcessorInterface[]
      */
     protected $processors = [];
 
     /**
      * Processor constructor.
      *
-     * @param \MageWorx\ExtendedShippingMethods\Api\DataProcessorInterface[] $processors
+     * @param \Wheelpros\ExtendedShippingMethods\Api\DataProcessorInterface[] $processors
      */
     public function __construct(
         array $processors = []

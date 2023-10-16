@@ -1,10 +1,7 @@
 <?php
-/**
- * Copyright © MageWorx. All rights reserved.
- * See LICENSE.txt for license details.
- */
 
-namespace MageWorx\Checkout\Block\Html\Header;
+
+namespace Wheelpros\Checkout\Block\Html\Header;
 
 use Magento\Framework\View\Element\Template;
 
@@ -56,7 +53,7 @@ class Breadcrumbs extends Template
             ],
             [
                 'title' => __('Checkout'),
-                'url'   => $this->getUrl('mageworx_checkout/onepage')
+                'url'   => $this->getUrl('wheelpros_checkout/onepage')
             ],
         ];
     }

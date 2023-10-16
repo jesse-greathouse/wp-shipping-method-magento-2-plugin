@@ -1,6 +1,6 @@
 <?php
 
-namespace MageWorx\Checkout\Plugin;
+namespace Wheelpros\Checkout\Plugin;
 
 use Magento\Framework\Exception\NoSuchEntityException;
 

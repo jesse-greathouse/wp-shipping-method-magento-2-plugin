@@ -1,10 +1,7 @@
 <?php
-/**
- * Copyright © MageWorx. All rights reserved.
- * See LICENSE.txt for license details.
- */
 
-namespace MageWorx\Checkout\Model;
+
+namespace Wheelpros\Checkout\Model;
 
 use Magento\Checkout\Model\ConfigProviderInterface;
 use Magento\Framework\Api\AbstractSimpleObject;
@@ -12,8 +9,8 @@ use Magento\Framework\Exception\NoSuchEntityException;
 use Magento\Framework\Exception\StateException;
 use Magento\Framework\UrlInterface;
 use Magento\Quote\Api\ShippingMethodManagementInterface;
-use MageWorx\Checkout\Api\CartManagerInterface;
-use MageWorx\Checkout\Api\CheckoutConfigInterface;
+use Wheelpros\Checkout\Api\CartManagerInterface;
+use Wheelpros\Checkout\Api\CheckoutConfigInterface;
 
 class CheckoutConfigProvider implements ConfigProviderInterface
 {
@@ -66,7 +63,7 @@ class CheckoutConfigProvider implements ConfigProviderInterface
     {
         $output = [
             'shippingMethods'               => $this->getShippingMethods(),
-            'mageworxCheckoutUrl'           => $this->getCheckoutUrl(),
+            'wheelprosCheckoutUrl'           => $this->getCheckoutUrl(),
             'defaultShippingMethod'         => $this->checkoutConfig->getDefaultShippingMethod(),
             'defaultPaymentMethod'          => $this->checkoutConfig->getDefaultPaymentMethod(),
             'labels'                        => $this->checkoutConfig->getLabels(),
@@ -125,7 +122,7 @@ class CheckoutConfigProvider implements ConfigProviderInterface
      */
     private function getCheckoutUrl(): string
     {
-        return $this->getUrl('mageworx_checkout/onepage');
+        return $this->getUrl('wheelpros_checkout/onepage');
     }
 
     /**

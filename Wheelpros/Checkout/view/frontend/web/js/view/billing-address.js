@@ -6,7 +6,7 @@ define(
         'Magento_Checkout/js/model/quote',
         'Magento_Checkout/js/checkout-data',
         'Magento_Checkout/js/action/create-billing-address',
-        'MageWorx_Checkout/js/action/select-billing-address',
+        'Wheelpros_Checkout/js/action/select-billing-address',
         'Magento_Checkout/js/action/set-billing-address',
         'Magento_Checkout/js/model/address-converter',
         'Magento_Checkout/js/model/payment/additional-validators',
@@ -36,9 +36,9 @@ define(
 
         return Component.extend({
             defaults: {
-                template: 'MageWorx_Checkout/billing-address/main',
-                formTemplate: 'MageWorx_Checkout/billing-address/form',
-                detailsTemplate: 'MageWorx_Checkout/billing-address/details',
+                template: 'Wheelpros_Checkout/billing-address/main',
+                formTemplate: 'Wheelpros_Checkout/billing-address/form',
+                detailsTemplate: 'Wheelpros_Checkout/billing-address/details',
                 isAddressSameAsShipping: true,
                 isAddressFormVisible: false,
                 visible: true,
@@ -218,7 +218,7 @@ define(
             },
 
             getAddressTemplate: function () {
-                return 'MageWorx_Checkout/container/address/billing-address';
+                return 'Wheelpros_Checkout/container/address/billing-address';
             }
         });
     }

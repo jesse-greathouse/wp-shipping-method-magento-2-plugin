@@ -1,13 +1,10 @@
 <?php
-/**
- * Copyright © MageWorx. All rights reserved.
- * See LICENSE.txt for license details.
- */
 
-namespace MageWorx\Checkout\Model;
+
+namespace Wheelpros\Checkout\Model;
 
 use Exception;
-use MageWorx\Checkout\Api\OrderCommentsManagementInterface;
+use Wheelpros\Checkout\Api\OrderCommentsManagementInterface;
 
 class OrderCommentsManagement implements OrderCommentsManagementInterface
 {
@@ -35,14 +32,14 @@ class OrderCommentsManagement implements OrderCommentsManagementInterface
      * OrderCommentsManagement constructor.
      *
      * @param \Magento\Quote\Model\MaskedQuoteIdToQuoteIdInterface $maskedQuoteIdToQuoteId
-     * @param \MageWorx\Checkout\Model\OrderCommentFactory $orderCommentFactory
-     * @param \MageWorx\Checkout\Model\ResourceModel\OrderComment $orderCommentResource
+     * @param \Wheelpros\Checkout\Model\OrderCommentFactory $orderCommentFactory
+     * @param \Wheelpros\Checkout\Model\ResourceModel\OrderComment $orderCommentResource
      * @param \Psr\Log\LoggerInterface $logger
      */
     public function __construct(
         \Magento\Quote\Model\MaskedQuoteIdToQuoteIdInterface $maskedQuoteIdToQuoteId,
-        \MageWorx\Checkout\Model\OrderCommentFactory $orderCommentFactory,
-        \MageWorx\Checkout\Model\ResourceModel\OrderComment $orderCommentResource,
+        \Wheelpros\Checkout\Model\OrderCommentFactory $orderCommentFactory,
+        \Wheelpros\Checkout\Model\ResourceModel\OrderComment $orderCommentResource,
         \Psr\Log\LoggerInterface $logger
     ) {
         $this->maskedQuoteIdToQuoteId = $maskedQuoteIdToQuoteId;
@@ -69,7 +66,7 @@ class OrderCommentsManagement implements OrderCommentsManagementInterface
      */
     public function saveComment(string $comment, int $cartId): bool
     {
-        /** @var \MageWorx\Checkout\Model\OrderComment $model */
+        /** @var \Wheelpros\Checkout\Model\OrderComment $model */
         $model = $this->orderCommentFactory->create();
         $this->orderCommentResource->load($model, $cartId, 'quote_id');
         if ($model->getId()) {
@@ -102,7 +99,7 @@ class OrderCommentsManagement implements OrderCommentsManagementInterface
      */
     public function getOrderCommentByQuoteId(int $quoteId): string
     {
-        /** @var \MageWorx\Checkout\Model\OrderComment $model */
+        /** @var \Wheelpros\Checkout\Model\OrderComment $model */
         $model = $this->orderCommentFactory->create();
         $this->orderCommentResource->load($model, $quoteId, 'quote_id');
         $comment = $model->getData('comment') ?? '';

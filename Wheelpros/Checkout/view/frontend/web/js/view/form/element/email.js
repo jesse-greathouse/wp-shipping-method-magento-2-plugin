@@ -1,5 +1,5 @@
 /**
- * Copyright © MageWorx All rights reserved.
+ * Copyright © Wheelpros All rights reserved.
  * See COPYING.txt for license details.
  */
 
@@ -31,7 +31,7 @@ define([
 
     return Component.extend({
         defaults: {
-            template: 'MageWorx_Checkout/form/element/email',
+            template: 'Wheelpros_Checkout/form/element/email',
             createAccountLabel: $t('I want to create an account'),
             createAccountAvailable: false,
             createAccount: false,

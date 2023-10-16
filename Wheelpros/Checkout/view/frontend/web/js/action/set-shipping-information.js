@@ -1,5 +1,5 @@
 /**
- * Copyright © MageWorx All rights reserved.
+ * Copyright © Wheelpros All rights reserved.
  * See COPYING.txt for license details.
  */
 
@@ -12,6 +12,6 @@ define([
     'use strict';
 
     return function () {
-        return shippingSaveProcessor.saveShippingInformation('mageworx_checkout');
+        return shippingSaveProcessor.saveShippingInformation('wheelpros_checkout');
     };
 });

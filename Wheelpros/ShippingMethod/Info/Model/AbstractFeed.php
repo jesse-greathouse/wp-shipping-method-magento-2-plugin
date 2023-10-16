@@ -1,10 +1,7 @@
 <?php
-/**
- * Copyright ©  MageWorx. All rights reserved.
- * See LICENSE.txt for license details.
- */
 
-namespace MageWorx\Info\Model;
+
+namespace Wheelpros\Info\Model;
 
 use Magento\AdminNotification\Model\Feed;
 use Magento\Framework\App\ObjectManager;

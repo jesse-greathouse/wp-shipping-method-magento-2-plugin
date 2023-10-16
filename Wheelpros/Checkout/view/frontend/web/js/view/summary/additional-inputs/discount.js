@@ -1,7 +1,4 @@
-/**
- * Copyright © MageWorx. All rights reserved.
- * See LICENSE.txt for license details.
- */
+
 
 define([
     'Magento_SalesRule/js/view/payment/discount',

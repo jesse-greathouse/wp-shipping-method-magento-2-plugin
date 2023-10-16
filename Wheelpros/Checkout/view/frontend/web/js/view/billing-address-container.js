@@ -6,8 +6,8 @@ define(
         'Magento_Checkout/js/model/quote',
         'Magento_Checkout/js/checkout-data',
         'Magento_Checkout/js/action/create-billing-address',
-        'MageWorx_Checkout/js/action/select-billing-address',
-        'MageWorx_Checkout/js/view/billing-address/list',
+        'Wheelpros_Checkout/js/action/select-billing-address',
+        'Wheelpros_Checkout/js/view/billing-address/list',
         'Magento_Customer/js/model/address-list',
         'Magento_Customer/js/model/customer',
         'Magento_Checkout/js/action/set-billing-address',
@@ -15,7 +15,7 @@ define(
         'Magento_Checkout/js/model/payment/additional-validators',
         'Magento_Ui/js/model/messageList',
         'Magento_Checkout/js/model/checkout-data-resolver',
-        'MageWorx_Checkout/js/model/billing-address/form-popup-state',
+        'Wheelpros_Checkout/js/model/billing-address/form-popup-state',
         'uiRegistry',
         'mage/translate'
     ],
@@ -47,15 +47,15 @@ define(
 
         return Component.extend({
             defaults: {
-                template: 'MageWorx_Checkout/billing-address/main',
-                formTemplate: 'MageWorx_Checkout/billing-address/form',
+                template: 'Wheelpros_Checkout/billing-address/main',
+                formTemplate: 'Wheelpros_Checkout/billing-address/form',
                 isAddressSameAsShipping: true,
                 isAddressDifferent: false,
                 isNewAddressAdded: false,
                 selectAddressPopUpVisible: false,
-                addressListPopUpTemplate: 'MageWorx_Checkout/billing-address/address-list-popup',
-                newAddressPopUpTemplate: 'MageWorx_Checkout/billing-address/new-address-popup',
-                detailsTemplate: 'MageWorx_Checkout/billing-address/details',
+                addressListPopUpTemplate: 'Wheelpros_Checkout/billing-address/address-list-popup',
+                newAddressPopUpTemplate: 'Wheelpros_Checkout/billing-address/new-address-popup',
+                detailsTemplate: 'Wheelpros_Checkout/billing-address/details',
                 isAddressFormVisible: false,
                 visible: true,
                 label: $t('Billing Address'),
@@ -383,15 +383,15 @@ define(
             },
 
             getAddressTemplate: function () {
-                return 'MageWorx_Checkout/container/address/billing-address';
+                return 'Wheelpros_Checkout/container/address/billing-address';
             },
 
             getAddressListPopUpTemplate: function () {
-                return this.addressListPopUpTemplate || 'MageWorx_Checkout/billing-address/address-list-popup';
+                return this.addressListPopUpTemplate || 'Wheelpros_Checkout/billing-address/address-list-popup';
             },
 
             getNewAddressPopUpTemplate: function () {
-                return this.newAddressPopUpTemplate || 'MageWorx_Checkout/billing-address/new-address-popup';
+                return this.newAddressPopUpTemplate || 'Wheelpros_Checkout/billing-address/new-address-popup';
             },
 
             /**

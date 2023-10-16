@@ -8,7 +8,7 @@ define([
         'Magento_Checkout/js/model/address-converter',
         'Magento_Checkout/js/model/quote',
         'Magento_Checkout/js/action/create-shipping-address',
-        'MageWorx_Checkout/js/action/select-shipping-address',
+        'Wheelpros_Checkout/js/action/select-shipping-address',
         'Magento_Checkout/js/model/shipping-rates-validator',
         'Magento_Checkout/js/model/shipping-address/form-popup-state',
         'Magento_Checkout/js/model/shipping-service',
@@ -19,8 +19,8 @@ define([
         'Magento_Checkout/js/model/payment/additional-validators',
         'Magento_Checkout/js/model/shipping-rate-service',
         'Magento_Checkout/js/model/shipping-save-processor',
-        'MageWorx_Checkout/js/model/shipping-save-processor/general',
-        'MageWorx_Checkout/js/model/shipping-rate-processor/general',
+        'Wheelpros_Checkout/js/model/shipping-save-processor/general',
+        'Wheelpros_Checkout/js/model/shipping-rate-processor/general',
         'Magento_Checkout/js/model/checkout-data-resolver',
         'Magento_Checkout/js/checkout-data',
         'Magento_Customer/js/customer-data',
@@ -60,11 +60,11 @@ define([
         /**
          * Register own shipping rate processor;
          */
-        shippingSaveProcessor.registerProcessor('mageworx_checkout', shippingSaveProcessorGeneral);
+        shippingSaveProcessor.registerProcessor('wheelpros_checkout', shippingSaveProcessorGeneral);
         shippingSaveProcessor.registerProcessor('default', shippingSaveProcessorGeneral);
 
         shippingRateService.registerProcessor('default', shippingRateProcessorGeneral);
-        shippingRateService.registerProcessor('mageworx_checkout', shippingRateProcessorGeneral);
+        shippingRateService.registerProcessor('wheelpros_checkout', shippingRateProcessorGeneral);
 
         /**
          * Add shipping methods to collection;
@@ -75,14 +75,14 @@ define([
 
         return Component.extend({
             defaults: {
-                template: 'MageWorx_Checkout/container/address/shipping-address',
-                shippingFormTemplate: 'MageWorx_Checkout/shipping-address/form',
+                template: 'Wheelpros_Checkout/container/address/shipping-address',
+                shippingFormTemplate: 'Wheelpros_Checkout/shipping-address/form',
                 shippingMethodListTemplate: 'Magento_Checkout/shipping-address/shipping-method-list',
                 shippingMethodItemTemplate: 'Magento_Checkout/shipping-address/shipping-method-item',
                 addressListPopUpTemplate: '',
                 isAddressDetailsVisible: true,
                 selectAddressPopUpVisible: false,
-                newAddressPopUpTemplate: 'MageWorx_Checkout/shipping-address/new-address-popup',
+                newAddressPopUpTemplate: 'Wheelpros_Checkout/shipping-address/new-address-popup',
                 shippingFormVisible: true,
                 label: $t('Shipping Address'),
                 currentShippingAddress: {},
@@ -176,7 +176,7 @@ define([
                             clearTimeout(timeoutId);
                             timeoutId = setTimeout(function (addressFlat) {
                                 selectShippingAddress(addressConverter.formAddressDataToQuoteAddress(addressFlat));
-                                shippingSaveProcessor.saveShippingInformation('mageworx_checkout');
+                                shippingSaveProcessor.saveShippingInformation('wheelpros_checkout');
                             }, 1500, shippingAddrData);
                         }
 
@@ -329,15 +329,15 @@ define([
             },
 
             getAddressTemplate: function () {
-                return 'MageWorx_Checkout/container/address/shipping-address';
+                return 'Wheelpros_Checkout/container/address/shipping-address';
             },
 
             getAddressListPopUpTemplate: function () {
-                return this.addressListPopUpTemplate || 'MageWorx_Checkout/shipping-address/pop-up';
+                return this.addressListPopUpTemplate || 'Wheelpros_Checkout/shipping-address/pop-up';
             },
 
             getNewAddressPopUpTemplate: function () {
-                return this.newAddressPopUpTemplate || 'MageWorx_Checkout/shipping-address/new-address-popup';
+                return this.newAddressPopUpTemplate || 'Wheelpros_Checkout/shipping-address/new-address-popup';
             },
 
             /**

@@ -1,10 +1,7 @@
 <?php
-/**
- * Copyright © MageWorx. All rights reserved.
- * See LICENSE.txt for license details.
- */
 
-namespace MageWorx\Checkout\Plugin;
+
+namespace Wheelpros\Checkout\Plugin;
 
 /**
  * Class Cart
@@ -14,17 +11,17 @@ namespace MageWorx\Checkout\Plugin;
 class Cart
 {
     /**
-     * @var \MageWorx\Checkout\Api\CheckoutConfigInterface
+     * @var \Wheelpros\Checkout\Api\CheckoutConfigInterface
      */
     private $checkoutConfig;
 
     /**
      * Cart constructor.
      *
-     * @param \MageWorx\Checkout\Api\CheckoutConfigInterface $checkoutConfig
+     * @param \Wheelpros\Checkout\Api\CheckoutConfigInterface $checkoutConfig
      */
     public function __construct(
-        \MageWorx\Checkout\Api\CheckoutConfigInterface $checkoutConfig
+        \Wheelpros\Checkout\Api\CheckoutConfigInterface $checkoutConfig
     ) {
         $this->checkoutConfig = $checkoutConfig;
     }
@@ -37,7 +34,7 @@ class Cart
     public function afterGetCheckoutUrl($subject, $result): string
     {
         if ($this->checkoutConfig->isEnabled()) {
-            $result = $subject->getUrl('mageworx_checkout/onepage');
+            $result = $subject->getUrl('wheelpros_checkout/onepage');
         }
 
         return $result;

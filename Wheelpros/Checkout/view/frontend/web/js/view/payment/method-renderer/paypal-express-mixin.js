@@ -1,7 +1,4 @@
-/**
- * Copyright © MageWorx. All rights reserved.
- * See LICENSE.txt for license details.
- */
+
 define(
     [
         'uiRegistry'
@@ -13,10 +10,10 @@ define(
 
         return function (origComponent) {
 
-            if (window.isMageWorxCheckout) {
+            if (window.isWheelprosCheckout) {
                 return origComponent.extend({
                     defaults: {
-                        template: 'MageWorx_Checkout/payment-method/renderer/paypal-express',
+                        template: 'Wheelpros_Checkout/payment-method/renderer/paypal-express',
                     },
 
                     selectPaymentMethod: function () {

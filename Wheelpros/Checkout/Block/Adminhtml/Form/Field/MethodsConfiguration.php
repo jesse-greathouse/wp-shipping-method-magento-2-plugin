@@ -1,10 +1,7 @@
 <?php
-/**
- * Copyright © MageWorx. All rights reserved.
- * See LICENSE.txt for license details.
- */
 
-namespace MageWorx\Checkout\Block\Adminhtml\Form\Field;
+
+namespace Wheelpros\Checkout\Block\Adminhtml\Form\Field;
 
 use Magento\Config\Block\System\Config\Form\Field\FieldArray\AbstractFieldArray;
 use Magento\Framework\DataObject;
@@ -13,7 +10,7 @@ use Magento\Framework\Exception\NoSuchEntityException;
 use Magento\Framework\UrlInterface;
 use Magento\Store\Api\Data\StoreInterface;
 use Magento\Store\Model\Store;
-use MageWorx\Checkout\Helper\PaymentMethods as Helper;
+use Wheelpros\Checkout\Helper\PaymentMethods as Helper;
 
 class MethodsConfiguration extends AbstractFieldArray
 {
@@ -30,7 +27,7 @@ class MethodsConfiguration extends AbstractFieldArray
     /**
      * @var string
      */
-    protected $_template = 'MageWorx_Checkout::system/config/form/field/methods_configuration_array.phtml';
+    protected $_template = 'Wheelpros_Checkout::system/config/form/field/methods_configuration_array.phtml';
 
     /**
      * @var StoreInterface

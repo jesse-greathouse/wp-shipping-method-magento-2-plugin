@@ -1,16 +1,13 @@
 <?php
-/**
- * Copyright ©  MageWorx. All rights reserved.
- * See LICENSE.txt for license details.
- */
 
-namespace MageWorx\Info\Model;
+
+namespace Wheelpros\Info\Model;
 
 use \Magento\Framework\App\Filesystem\DirectoryList;
 
 class MetaPackageList
 {
-    const VENDOR = 'MageWorx';
+    const VENDOR = 'Wheelpros';
 
     /**
      * @var \Magento\Framework\Filesystem\Directory\ReadFactory

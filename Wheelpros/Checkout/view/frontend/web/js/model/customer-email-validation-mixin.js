@@ -1,5 +1,5 @@
 /**
- * Copyright © MageWorx. All rights reserved.
+ * Copyright © Wheelpros. All rights reserved.
  * See COPYING.txt for license details.
  */
 
@@ -14,7 +14,7 @@ define([
     return function (originalValidatorObject) {
         var updateValidator = {};
 
-        if (window.isMageWorxCheckout) {
+        if (window.isWheelprosCheckout) {
             updateValidator.validate = function () {
                 var emailValidationResult = customer.isLoggedIn(),
                     loginFormSelector = 'form[data-role=email-with-possible-login]:visible';

@@ -1,10 +1,7 @@
 <?php
-/**
- * Copyright © MageWorx. All rights reserved.
- * See LICENSE.txt for license details.
- */
 
-namespace MageWorx\Checkout\Preprocessor\Adapter\Scss;
+
+namespace Wheelpros\Checkout\Preprocessor\Adapter\Scss;
 
 use Magento\Framework\App\ObjectManager;
 use Magento\Framework\Filesystem;
@@ -14,7 +11,7 @@ use Magento\Framework\View\Asset\LocalInterface;
 use Magento\Framework\View\Design\FileResolution\Fallback\Resolver\Simple;
 use Magento\Framework\View\Design\FileResolution\Fallback\StaticFile;
 use Magento\Framework\View\Design\Theme\ThemeProviderInterface;
-use MageWorx\Checkout\Helper\Colors;
+use Wheelpros\Checkout\Helper\Colors;
 use Psr\Log\LoggerInterface;
 use Magento\Framework\View\Asset\File;
 use Magento\Framework\View\Asset\Source;

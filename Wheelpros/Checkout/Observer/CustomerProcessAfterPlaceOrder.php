@@ -1,18 +1,15 @@
 <?php
-/**
- * Copyright © MageWorx. All rights reserved.
- * See LICENSE.txt for license details.
- */
 
-namespace MageWorx\Checkout\Observer;
+
+namespace Wheelpros\Checkout\Observer;
 
 use Magento\Customer\Api\AddressRepositoryInterface;
 use Magento\Framework\Event\ObserverInterface;
 use Magento\Framework\Exception\LocalizedException;
 use Magento\Framework\Exception\NoSuchEntityException;
 use Magento\Quote\Model\QuoteIdMask;
-use MageWorx\Checkout\Api\GuestCustomerManagementInterface;
-use MageWorx\Checkout\Helper\CheckoutConfig;
+use Wheelpros\Checkout\Api\GuestCustomerManagementInterface;
+use Wheelpros\Checkout\Helper\CheckoutConfig;
 
 class CustomerProcessAfterPlaceOrder implements ObserverInterface
 {
@@ -82,7 +79,7 @@ class CustomerProcessAfterPlaceOrder implements ObserverInterface
     private $messageManager;
 
     /**
-     * @var \MageWorx\Checkout\Api\EmailSubscriptionManagerInterface
+     * @var \Wheelpros\Checkout\Api\EmailSubscriptionManagerInterface
      */
     private $emailSubscriptionManager;
 
@@ -115,7 +112,7 @@ class CustomerProcessAfterPlaceOrder implements ObserverInterface
      * @param \Magento\Quote\Model\QuoteIdMaskFactory $quoteIdMaskFactory
      * @param \Magento\Customer\Model\AddressFactory $addressFactory
      * @param AddressRepositoryInterface $addressRepository
-     * @param \MageWorx\Checkout\Api\EmailSubscriptionManagerInterface $emailSubscriptionManager
+     * @param \Wheelpros\Checkout\Api\EmailSubscriptionManagerInterface $emailSubscriptionManager
      * @param \Magento\Newsletter\Model\SubscriberFactory $subscriberFactory
      * @param \Magento\Framework\Message\ManagerInterface $messageManager
      * @param CheckoutConfig $checkoutConfig
@@ -130,14 +127,14 @@ class CustomerProcessAfterPlaceOrder implements ObserverInterface
         \Magento\Store\Model\StoreManagerInterface $storeManager,
         \Magento\Customer\Api\CustomerRepositoryInterface $customerRepository,
         \Magento\Customer\Model\CustomerRegistry $customerRegistry,
-        \MageWorx\Checkout\Api\GuestCustomerManagementInterface $guestCustomerManagement,
+        \Wheelpros\Checkout\Api\GuestCustomerManagementInterface $guestCustomerManagement,
         \Magento\Quote\Model\QuoteIdMaskFactory $quoteIdMaskFactory,
         \Magento\Customer\Model\AddressFactory $addressFactory,
         \Magento\Customer\Api\AddressRepositoryInterface $addressRepository,
-        \MageWorx\Checkout\Api\EmailSubscriptionManagerInterface $emailSubscriptionManager,
+        \Wheelpros\Checkout\Api\EmailSubscriptionManagerInterface $emailSubscriptionManager,
         \Magento\Newsletter\Model\SubscriberFactory $subscriberFactory,
         \Magento\Framework\Message\ManagerInterface $messageManager,
-        \MageWorx\Checkout\Helper\CheckoutConfig $checkoutConfig,
+        \Wheelpros\Checkout\Helper\CheckoutConfig $checkoutConfig,
         \Magento\Customer\Model\Session $customerSession,
         \Psr\Log\LoggerInterface $logger
     ) {

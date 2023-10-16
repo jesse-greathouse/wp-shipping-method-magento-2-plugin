@@ -1,10 +1,7 @@
 <?php
-/**
- * Copyright © MageWorx. All rights reserved.
- * See LICENSE.txt for license details.
- */
 
-namespace MageWorx\Checkout\Plugin;
+
+namespace Wheelpros\Checkout\Plugin;
 
 use Magento\Framework\View\Asset\ConfigInterface;
 
@@ -16,7 +13,7 @@ class MergeBundleJsCss
     private $request;
 
     /**
-     * @var \MageWorx\Checkout\Api\CheckoutConfigInterface
+     * @var \Wheelpros\Checkout\Api\CheckoutConfigInterface
      */
     private $checkoutConfig;
 
@@ -27,7 +24,7 @@ class MergeBundleJsCss
      */
     public function __construct(
         \Magento\Framework\App\Request\Http $request,
-        \MageWorx\Checkout\Api\CheckoutConfigInterface $checkoutConfig
+        \Wheelpros\Checkout\Api\CheckoutConfigInterface $checkoutConfig
     ) {
         $this->request = $request;
         $this->checkoutConfig = $checkoutConfig;
@@ -40,7 +37,7 @@ class MergeBundleJsCss
      */
     public function afterIsMergeCssFiles(ConfigInterface $subject, $result)
     {
-        if ($this->isMageWorxCheckoutPage()) {
+        if ($this->isWheelprosCheckoutPage()) {
             $result = $result || $this->checkoutConfig->isMergeJsCssEnabled();
         }
 
@@ -54,7 +51,7 @@ class MergeBundleJsCss
      */
     public function afterIsBundlingJsFiles(ConfigInterface $subject, $result)
     {
-        if ($this->isMageWorxCheckoutPage()) {
+        if ($this->isWheelprosCheckoutPage()) {
             $result = $result || $this->checkoutConfig->isMergeJsCssEnabled();
         }
 
@@ -68,7 +65,7 @@ class MergeBundleJsCss
      */
     public function afterIsMergeJsFiles(ConfigInterface $subject, $result)
     {
-        if ($this->isMageWorxCheckoutPage()) {
+        if ($this->isWheelprosCheckoutPage()) {
             $result = $result || $this->checkoutConfig->isMergeJsCssEnabled();
         }
 
@@ -78,8 +75,8 @@ class MergeBundleJsCss
     /**
      * @return bool
      */
-    private function isMageWorxCheckoutPage(): bool
+    private function isWheelprosCheckoutPage(): bool
     {
-        return $this->request->getRouteName() == 'mageworx_checkout';
+        return $this->request->getRouteName() == 'wheelpros_checkout';
     }
 }

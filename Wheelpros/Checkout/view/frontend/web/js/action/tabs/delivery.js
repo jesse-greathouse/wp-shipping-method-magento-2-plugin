@@ -1,7 +1,4 @@
-/**
- * Copyright © MageWorx. All rights reserved.
- * See LICENSE.txt for license details.
- */
+
 define([
     'uiRegistry',
 ], function (
@@ -10,7 +7,7 @@ define([
     'use strict';
 
     return function (flag) {
-        var pickupInfo = registry.get('checkout.steps.shipping-step.shippingAddress.shippingAdditional.mageworxpickup');
+        var pickupInfo = registry.get('checkout.steps.shipping-step.shippingAddress.shippingAdditional.wheelprospickup');
 
         if (flag === true) {
             enableTab();

@@ -1,6 +1,6 @@
 {
-    "name": "mageworx/module-info",
-    "description": "MageWorx Notifications & Extensions List",
+    "name": "wheelpros/module-info",
+    "description": "Wheelpros Notifications & Extensions List",
     "require": {
         "magento/module-catalog" : ">=100.0.0 <105",
         "magento/module-cms"     : ">=100.0.0 <105"
@@ -14,7 +14,7 @@
     "autoload": {
         "files": [ "registration.php" ],
         "psr-4": {
-            "MageWorx\\Info\\": ""
+            "Wheelpros\\Info\\": ""
         }
     }
 }

@@ -1,10 +1,7 @@
 <?php
-/**
- * Copyright © MageWorx. All rights reserved.
- * See LICENSE.txt for license details.
- */
 
-namespace MageWorx\Checkout\Model\ResourceModel\CheckoutDummyData;
+
+namespace Wheelpros\Checkout\Model\ResourceModel\CheckoutDummyData;
 
 use Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection;
 
@@ -18,8 +15,8 @@ class Collection extends AbstractCollection
     protected function _construct()
     {
         $this->_init(
-            \MageWorx\Checkout\Model\CheckoutDummyData::class,
-            \MageWorx\Checkout\Model\ResourceModel\CheckoutDummyData::class
+            \Wheelpros\Checkout\Model\CheckoutDummyData::class,
+            \Wheelpros\Checkout\Model\ResourceModel\CheckoutDummyData::class
         );
         $this->_setIdFieldName('id');
     }

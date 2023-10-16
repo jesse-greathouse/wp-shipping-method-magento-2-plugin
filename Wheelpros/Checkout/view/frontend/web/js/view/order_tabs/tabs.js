@@ -1,6 +1,6 @@
 define([
     'uiComponent',
-    'MageWorx_Checkout/js/action/select-tab',
+    'Wheelpros_Checkout/js/action/select-tab',
     'uiRegistry'
 ], function (
     Component,

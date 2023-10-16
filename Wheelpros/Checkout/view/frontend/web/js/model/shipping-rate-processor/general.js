@@ -5,7 +5,7 @@ define([
     'Magento_Checkout/js/model/shipping-service',
     'Magento_Checkout/js/model/shipping-rate-registry',
     'Magento_Checkout/js/model/error-processor',
-    'MageWorx_Checkout/js/action/select-shipping-address'
+    'Wheelpros_Checkout/js/action/select-shipping-address'
 ], function (
     resourceUrlManager,
     quote,

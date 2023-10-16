@@ -1,7 +1,4 @@
-/**
- * Copyright © MageWorx. All rights reserved.
- * See LICENSE.txt for license details.
- */
+
 
 define([
     'jquery',
@@ -31,7 +28,7 @@ define([
         forgotPasswordUrl: checkoutConfig.forgotPasswordUrl,
         autocomplete: checkoutConfig.autocomplete,
         defaults: {
-            template: 'MageWorx_Checkout/authentication',
+            template: 'Wheelpros_Checkout/authentication',
             visible: false
         },
         observableProperties: [
@@ -88,7 +85,7 @@ define([
                 $(loginForm).validation('isValid')
             ) {
                 $('body').trigger('processStart');
-                loginAction(loginData, checkoutConfig.mageworxCheckoutUrl, undefined, messageContainer)
+                loginAction(loginData, checkoutConfig.wheelprosCheckoutUrl, undefined, messageContainer)
                     .done(function () {
                         setTimeout($('body').trigger('processStop'), 1500);
                     })

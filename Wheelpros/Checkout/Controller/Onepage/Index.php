@@ -1,10 +1,7 @@
 <?php
-/**
- * Copyright © MageWorx. All rights reserved.
- * See LICENSE.txt for license details.
- */
 
-namespace MageWorx\Checkout\Controller\Onepage;
+
+namespace Wheelpros\Checkout\Controller\Onepage;
 
 use Magento\Checkout\Model\Session as CheckoutSession;
 use Magento\Checkout\Model\Type\Onepage as CheckoutTypeOnepage;
@@ -15,13 +12,13 @@ use Magento\Framework\Controller\Result\JsonFactory;
 use Magento\Framework\Controller\ResultFactory as ResultFactory;
 use Magento\Framework\Controller\ResultInterface;
 use Magento\Framework\View\Result\Page as ResultPage;
-use MageWorx\Checkout\Api\CheckoutConfigInterface as CheckoutConfigHelper;
+use Wheelpros\Checkout\Api\CheckoutConfigInterface as CheckoutConfigHelper;
 use Magento\Checkout\Helper\Data as RegularCheckoutHelper;
 
 /**
  * Class Index
  *
- * Main controller for MageWorx Checkout
+ * Main controller for Wheelpros Checkout
  */
 class Index extends Action
 {

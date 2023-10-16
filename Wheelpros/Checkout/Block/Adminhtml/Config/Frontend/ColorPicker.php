@@ -1,12 +1,9 @@
 <?php
-/**
- * Copyright © MageWorx. All rights reserved.
- * See LICENSE.txt for license details.
- */
+
 
 declare(strict_types=1);
 
-namespace MageWorx\Checkout\Block\Adminhtml\Config\Frontend;
+namespace Wheelpros\Checkout\Block\Adminhtml\Config\Frontend;
 
 class ColorPicker extends \Magento\Config\Block\System\Config\Form\Field
 {

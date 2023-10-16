@@ -1,17 +1,14 @@
 <?php
-/**
- * Copyright ©  MageWorx. All rights reserved.
- * See LICENSE.txt for license details.
- */
 
-namespace MageWorx\Info\Observer;
+
+namespace Wheelpros\Info\Observer;
 
 use Magento\Framework\Event\ObserverInterface;
 
-class GetMageWorxOffers implements ObserverInterface
+class GetWheelprosOffers implements ObserverInterface
 {
     /**
-     * @var \MageWorx\Info\Model\OffersFeedFactory
+     * @var \Wheelpros\Info\Model\OffersFeedFactory
      */
     protected $feedFactory;
 
@@ -21,20 +18,20 @@ class GetMageWorxOffers implements ObserverInterface
     protected $backendSession;
 
     /**
-     * @var \MageWorx\Info\Helper\Data
+     * @var \Wheelpros\Info\Helper\Data
      */
     protected $helper;
 
     /**
-     * GetMageWorxOffers constructor.
+     * GetWheelprosOffers constructor.
      *
-     * @param \MageWorx\Info\Model\UpdatesFeedFactory $feedFactory
-     * @param \MageWorx\Info\Helper\Data $helper
+     * @param \Wheelpros\Info\Model\UpdatesFeedFactory $feedFactory
+     * @param \Wheelpros\Info\Helper\Data $helper
      * @param \Magento\Backend\Model\Auth\Session $backendSession
      */
     public function __construct(
-        \MageWorx\Info\Model\OffersFeedFactory $feedFactory,
-        \MageWorx\Info\Helper\Data $helper,
+        \Wheelpros\Info\Model\OffersFeedFactory $feedFactory,
+        \Wheelpros\Info\Helper\Data $helper,
         \Magento\Backend\Model\Auth\Session $backendSession
     ) {
         $this->feedFactory    = $feedFactory;
@@ -52,7 +49,7 @@ class GetMageWorxOffers implements ObserverInterface
             && $this->helper->isOffersNotificationEnabled()
         ) {
             $feedModel = $this->feedFactory->create();
-            /* @var $feedModel \MageWorx\Info\Model\OffersFeed */
+            /* @var $feedModel \Wheelpros\Info\Model\OffersFeed */
             $feedModel->checkUpdate();
         }
     }

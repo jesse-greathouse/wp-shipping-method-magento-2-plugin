@@ -1,13 +1,10 @@
 <?php
-/**
- * Copyright © MageWorx. All rights reserved.
- * See LICENSE.txt for license details.
- */
 
-namespace MageWorx\Info\Controller\Adminhtml\ExtensionInfo;
+
+namespace Wheelpros\Info\Controller\Adminhtml\ExtensionInfo;
 
 use Magento\Backend\App\Action\Context;
-use MageWorx\Info\Helper\Data;
+use Wheelpros\Info\Helper\Data;
 
 class Update extends \Magento\Backend\App\Action
 {
@@ -40,7 +37,7 @@ class Update extends \Magento\Backend\App\Action
         $this->helper->checkExtensionListUpdate(true);
 
         $resultRedirect = $this->resultRedirectFactory->create();
-        $resultRedirect->setPath('adminhtml/system_config/edit/section/mageworx_extensions');
+        $resultRedirect->setPath('adminhtml/system_config/edit/section/wheelpros_extensions');
 
         return $resultRedirect;
     }

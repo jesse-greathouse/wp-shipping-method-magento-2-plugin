@@ -1,11 +1,8 @@
 <?php
-/**
- * Copyright © MageWorx. All rights reserved.
- * See LICENSE.txt for license details.
- */
+
 declare(strict_types=1);
 
-namespace MageWorx\Checkout\Helper;
+namespace Wheelpros\Checkout\Helper;
 
 use Magento\Framework\App\Helper\AbstractHelper as MagentoAbstractHelper;
 use Magento\Store\Model\ScopeInterface;
@@ -22,9 +19,9 @@ class Colors extends MagentoAbstractHelper
     const DEFAULT_HEADER_BASE_COLOR   = '#1f965e';
     const DEFAULT_ACCENT_BASE_COLOR   = '#1f965e';
 
-    const XML_PATH_CHECKOUT_BASE_COLOR = 'mageworx_checkout/design/main_color';
-    const XML_PATH_HEADER_BASE_COLOR   = 'mageworx_checkout/design/header_color';
-    const XML_PATH_ACCENT_BASE_COLOR   = 'mageworx_checkout/design/accent_color';
+    const XML_PATH_CHECKOUT_BASE_COLOR = 'wheelpros_checkout/design/main_color';
+    const XML_PATH_HEADER_BASE_COLOR   = 'wheelpros_checkout/design/header_color';
+    const XML_PATH_ACCENT_BASE_COLOR   = 'wheelpros_checkout/design/accent_color';
 
     /**
      * @param int|null $storeId

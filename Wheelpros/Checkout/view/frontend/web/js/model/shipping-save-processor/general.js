@@ -1,7 +1,4 @@
-/**
- * Copyright © MageWorx. All rights reserved.
- * See LICENSE.txt for license details.
- */
+
 
 define([
     'ko',
@@ -12,9 +9,9 @@ define([
     'Magento_Checkout/js/model/payment-service',
     'Magento_Checkout/js/model/payment/method-converter',
     'Magento_Checkout/js/model/error-processor',
-    'MageWorx_Checkout/js/action/select-billing-address',
+    'Wheelpros_Checkout/js/action/select-billing-address',
     'Magento_Checkout/js/model/shipping-save-processor/payload-extender',
-    'MageWorx_Checkout/js/model/default-shipping-method'
+    'Wheelpros_Checkout/js/model/default-shipping-method'
 ], function (
     ko,
     $,

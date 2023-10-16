@@ -34,7 +34,7 @@ define([
 
     return Component.extend({
         defaults: {
-            template: 'MageWorx_Checkout/container/payment',
+            template: 'Wheelpros_Checkout/container/payment',
             label: $t('Payment Method'),
             sectionIndex: 3
         },

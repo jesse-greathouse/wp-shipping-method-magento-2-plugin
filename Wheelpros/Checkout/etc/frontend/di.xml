@@ -1,25 +1,22 @@
 <?xml version="1.0"?>
 <!--
-/**
- * Copyright © MageWorx. All rights reserved.
- * See LICENSE.txt for license details.
- */
+
  -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <!-- Preferences -->
-    <preference for="MageWorx\Checkout\Api\CheckoutConfigInterface" type="MageWorx\Checkout\Helper\CheckoutConfig" />
-    <preference for="MageWorx\Checkout\Api\CheckoutTypeInterface" type="MageWorx\Checkout\Model\Onepage" />
+    <preference for="Wheelpros\Checkout\Api\CheckoutConfigInterface" type="Wheelpros\Checkout\Helper\CheckoutConfig" />
+    <preference for="Wheelpros\Checkout\Api\CheckoutTypeInterface" type="Wheelpros\Checkout\Model\Onepage" />
     <!-- Plugins -->
     <type name="Magento\Checkout\Block\Cart\Sidebar">
-        <plugin name="mageworx_checkout_change_checkout_url"
-                type="MageWorx\Checkout\Plugin\Sidebar"
+        <plugin name="wheelpros_checkout_change_checkout_url"
+                type="Wheelpros\Checkout\Plugin\Sidebar"
                 sortOrder="10"
                 disabled="false" />
     </type>
     <type name="Magento\Checkout\Block\Onepage\Link">
-        <plugin name="mageworx_checkout_change_checkout_url_in_cart"
-                type="MageWorx\Checkout\Plugin\Cart"
+        <plugin name="wheelpros_checkout_change_checkout_url_in_cart"
+                type="Wheelpros\Checkout\Plugin\Cart"
                 sortOrder="10"
                 disabled="false" />
     </type>
@@ -27,26 +24,26 @@
     <type name="Magento\Checkout\Model\CompositeConfigProvider">
         <arguments>
             <argument name="configProviders" xsi:type="array">
-                <item name="mageworx_checkout_config_provider" xsi:type="object">MageWorx\Checkout\Model\CheckoutConfigProvider</item>
+                <item name="wheelpros_checkout_config_provider" xsi:type="object">Wheelpros\Checkout\Model\CheckoutConfigProvider</item>
             </argument>
         </arguments>
     </type>
     <!-- Checkout Layout Processor -->
     <type name="Magento\Checkout\Block\Onepage">
-        <plugin name="mageworx_checkout_add_own_layout_processor_after_all"
-                type="MageWorx\Checkout\Plugin\AddLayoutProcessorAfterAll"
+        <plugin name="wheelpros_checkout_add_own_layout_processor_after_all"
+                type="Wheelpros\Checkout\Plugin\AddLayoutProcessorAfterAll"
                 sortOrder="10000"
                 disabled="false" />
     </type>
     <!-- Merge and bundle js and css on checkout page -->
     <type name="Magento\Framework\View\Asset\ConfigInterface">
-        <plugin name="mageworx_checkout_merge_bundle_js_css"
-                type="MageWorx\Checkout\Plugin\MergeBundleJsCss"
+        <plugin name="wheelpros_checkout_merge_bundle_js_css"
+                type="Wheelpros\Checkout\Plugin\MergeBundleJsCss"
                 sortOrder="100"
                 disabled="false" />
     </type>
     <!-- Grouped shipping address fields -->
-    <type name="MageWorx\Checkout\Block\Checkout\Onepage\LayoutProcessor">
+    <type name="Wheelpros\Checkout\Block\Checkout\Onepage\LayoutProcessor">
         <arguments>
             <argument name="addressFieldPairs" xsi:type="array">
                 <item name="firstname-lastname" xsi:type="array">

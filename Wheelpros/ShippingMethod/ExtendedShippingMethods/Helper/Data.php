@@ -1,10 +1,7 @@
 <?php
-/**
- * Copyright © MageWorx. All rights reserved.
- * See LICENSE.txt for license details.
- */
 
-namespace MageWorx\ExtendedShippingMethods\Helper;
+
+namespace Wheelpros\ExtendedShippingMethods\Helper;
 
 use Magento\Framework\App\Helper\AbstractHelper;
 use Magento\Framework\App\Helper\Context;
@@ -19,11 +16,11 @@ use Psr\Log\LoggerInterface as Logger;
 
 class Data extends AbstractHelper
 {
-    const XML_PATH_SHIPPING_METHODS_CONFIG = 'mageworx_checkout/shipping_methods/configuration';
+    const XML_PATH_SHIPPING_METHODS_CONFIG = 'wheelpros_checkout/shipping_methods/configuration';
 
-    const XML_PATH_SHIPPING_METHODS_ICONS  = 'mageworx_checkout/shipping_methods/add_icons';
+    const XML_PATH_SHIPPING_METHODS_ICONS  = 'wheelpros_checkout/shipping_methods/add_icons';
 
-    const IMAGE_URL_PATH = '/mageworx/extended_shipping_methods/icons/';
+    const IMAGE_URL_PATH = '/wheelpros/extended_shipping_methods/icons/';
 
     /**
      * @var \Magento\Framework\Math\Random

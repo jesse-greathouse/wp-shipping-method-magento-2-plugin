@@ -1,10 +1,7 @@
 <?php
-/**
- * Copyright © MageWorx. All rights reserved.
- * See LICENSE.txt for license details.
- */
 
-namespace MageWorx\Checkout\Plugin;
+
+namespace Wheelpros\Checkout\Plugin;
 
 use Magento\Framework\Exception\LocalizedException;
 
@@ -16,7 +13,7 @@ class AddLayoutProcessorAfterAll
     private $serializer;
 
     /**
-     * @var \MageWorx\Checkout\Block\Checkout\Onepage\LayoutProcessorFactory
+     * @var \Wheelpros\Checkout\Block\Checkout\Onepage\LayoutProcessorFactory
      */
     private $layoutProcessorFactory;
 
@@ -28,11 +25,11 @@ class AddLayoutProcessorAfterAll
     /**
      * AddLayoutProcessorAfterAll constructor.
      *
-     * @param \MageWorx\Checkout\Block\Checkout\Onepage\LayoutProcessorFactory $layoutProcessorFactory
+     * @param \Wheelpros\Checkout\Block\Checkout\Onepage\LayoutProcessorFactory $layoutProcessorFactory
      * @param \Magento\Framework\Serialize\SerializerInterface $serializer
      */
     public function __construct(
-        \MageWorx\Checkout\Block\Checkout\Onepage\LayoutProcessorFactory $layoutProcessorFactory,
+        \Wheelpros\Checkout\Block\Checkout\Onepage\LayoutProcessorFactory $layoutProcessorFactory,
         \Magento\Framework\Serialize\SerializerInterface $serializer,
         \Psr\Log\LoggerInterface $logger
     ) {
@@ -51,9 +48,9 @@ class AddLayoutProcessorAfterAll
         $jsLayout = $this->serializer->unserialize($jsLayoutSerialized);
 
         try {
-            /** @var \MageWorx\Checkout\Block\Checkout\Onepage\LayoutProcessor $mageworxCheckoutLayoutProcessor */
-            $mageworxCheckoutLayoutProcessor = $this->layoutProcessorFactory->create();
-            $jsLayout                        = $mageworxCheckoutLayoutProcessor->process($jsLayout);
+            /** @var \Wheelpros\Checkout\Block\Checkout\Onepage\LayoutProcessor $wheelprosCheckoutLayoutProcessor */
+            $wheelprosCheckoutLayoutProcessor = $this->layoutProcessorFactory->create();
+            $jsLayout                        = $wheelprosCheckoutLayoutProcessor->process($jsLayout);
         } catch (LocalizedException $e) {
             $this->logger->emergency($e->getLogMessage());
         } finally {

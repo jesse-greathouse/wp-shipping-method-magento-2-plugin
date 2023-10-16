@@ -1,10 +1,7 @@
-/**
- * Copyright © MageWorx. All rights reserved.
- * See LICENSE.txt for license details.
- */
+
 define([
-    'MageWorx_Checkout/js/model/update-totals-processor',
-    'MageWorx_Checkout/js/action/save-billing-address',
+    'Wheelpros_Checkout/js/model/update-totals-processor',
+    'Wheelpros_Checkout/js/action/save-billing-address',
     'Magento_Checkout/js/model/payment-service',
     'Magento_Checkout/js/model/payment/method-converter',
     'Magento_Checkout/js/model/payment/method-list',

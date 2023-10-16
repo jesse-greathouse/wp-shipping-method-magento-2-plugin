@@ -1,14 +1,11 @@
 <?php
-/**
- * Copyright © MageWorx. All rights reserved.
- * See LICENSE.txt for license details.
- */
 
-namespace MageWorx\Checkout\Model;
+
+namespace Wheelpros\Checkout\Model;
 
 use Magento\Framework\Exception\LocalizedException;
 use Magento\Quote\Api\Data\CartInterface;
-use MageWorx\Checkout\Api\CartManagerInterface;
+use Wheelpros\Checkout\Api\CartManagerInterface;
 
 class CartManager implements CartManagerInterface
 {

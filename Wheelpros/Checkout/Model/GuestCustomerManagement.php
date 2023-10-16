@@ -1,14 +1,11 @@
 <?php
-/**
- * Copyright © MageWorx. All rights reserved.
- * See LICENSE.txt for license details.
- */
 
-namespace MageWorx\Checkout\Model;
+
+namespace Wheelpros\Checkout\Model;
 
 use Exception;
 use Magento\Framework\Exception\NoSuchEntityException;
-use MageWorx\Checkout\Api\GuestCustomerManagementInterface;
+use Wheelpros\Checkout\Api\GuestCustomerManagementInterface;
 
 /**
  * Class GuestCustomerManagement
@@ -48,8 +45,8 @@ class GuestCustomerManagement implements GuestCustomerManagementInterface
      * @param \Psr\Log\LoggerInterface $logger
      */
     public function __construct(
-        \MageWorx\Checkout\Model\ResourceModel\CheckoutDummyData $checkoutDummyDataResource,
-        \MageWorx\Checkout\Model\CheckoutDummyDataFactory $checkoutDummyDataFactory,
+        \Wheelpros\Checkout\Model\ResourceModel\CheckoutDummyData $checkoutDummyDataResource,
+        \Wheelpros\Checkout\Model\CheckoutDummyDataFactory $checkoutDummyDataFactory,
         \Magento\Framework\Encryption\Encryptor $encryptor,
         \Psr\Log\LoggerInterface $logger
     ) {
@@ -64,7 +61,7 @@ class GuestCustomerManagement implements GuestCustomerManagementInterface
      */
     public function saveTempPassword(string $cartId, string $email, string $password): bool
     {
-        /** @var \MageWorx\Checkout\Model\CheckoutDummyData $model */
+        /** @var \Wheelpros\Checkout\Model\CheckoutDummyData $model */
         $model = $this->checkoutDummyDataFactory->create();
         $this->checkoutDummyDataResource->load($model, $cartId, 'cart_id');
         $passwordHash = $this->encryptor->getHash($password, true);
@@ -91,7 +88,7 @@ class GuestCustomerManagement implements GuestCustomerManagementInterface
      */
     public function getTempPasswordHash($cartId): string
     {
-        /** @var \MageWorx\Checkout\Model\CheckoutDummyData $model */
+        /** @var \Wheelpros\Checkout\Model\CheckoutDummyData $model */
         $model = $this->checkoutDummyDataFactory->create();
         $this->checkoutDummyDataResource->load($model, $cartId, 'cart_id');
         if (!$model->getId() || !$model->getData('data')) {

@@ -1,14 +1,11 @@
 <?php
-/**
- * Copyright © MageWorx. All rights reserved.
- * See LICENSE.txt for license details.
- */
 
-namespace MageWorx\Checkout\Plugin;
+
+namespace Wheelpros\Checkout\Plugin;
 
 use Magento\Quote\Api\Data\PaymentInterface;
 use Magento\Sales\Api\OrderRepositoryInterface;
-use MageWorx\Checkout\Api\OrderCommentsManagementInterface;
+use Wheelpros\Checkout\Api\OrderCommentsManagementInterface;
 use Psr\Log\LoggerInterface;
 
 /**

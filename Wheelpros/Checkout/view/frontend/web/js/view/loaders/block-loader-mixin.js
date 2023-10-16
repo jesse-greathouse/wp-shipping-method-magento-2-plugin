@@ -1,7 +1,4 @@
-/**
- * Copyright © MageWorx. All rights reserved.
- * See LICENSE.txt for license details.
- */
+
 
 define([
     'mage/utils/wrapper',
@@ -12,7 +9,7 @@ define([
 ], function (wrapper,ko, $, templateLoader, template) {
     'use strict';
 
-    var blockLoaderTemplatePath = 'MageWorx_Checkout/spinner',
+    var blockLoaderTemplatePath = 'Wheelpros_Checkout/spinner',
         blockContentLoadingClass = 'layout__pane--loading',
         blockLoaderElement = $.Deferred(),
         loaderImageHref = $.Deferred(),
@@ -42,7 +39,7 @@ define([
     }
 
     /**
-     * Add mageworx loader to block.
+     * Add wheelpros loader to block.
      */
     function addBlockLoader(block) {
         block.find(':focus').blur();
@@ -57,7 +54,7 @@ define([
     }
 
     /**
-     * Remove mageworx loader from block.
+     * Remove wheelpros loader from block.
      */
     function removeBlockLoader(block) {
         if (!block.has(blockLoaderClass).length) {
@@ -71,7 +68,7 @@ define([
 
     return function (blockLoaderFunction) {
         return wrapper.wrap(blockLoaderFunction, function (originalBlockLoaderFunctionFunction, loaderHref) {
-            if (window.isMageWorxCheckout) {
+            if (window.isWheelprosCheckout) {
                 loaderImageHref.resolve(loaderHref);
                 ko.bindingHandlers.blockLoader = {
                     update: function (element, displayBlockLoader) {

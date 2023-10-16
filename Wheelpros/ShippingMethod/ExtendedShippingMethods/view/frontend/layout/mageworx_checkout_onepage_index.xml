@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!--
 /**
- * Copyright © MageWorx, Inc. All rights reserved.
+ * Copyright © Wheelpros, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 -->
@@ -24,7 +24,7 @@
                                                             <item name="children" xsi:type="array">
                                                                 <item name="delivery_date" xsi:type="array">
                                                                     <item name="component" xsi:type="string">uiComponent</item>
-                                                                    <item name="template" xsi:type="string">MageWorx_ExtendedShippingMethods/shipping-method-additional-data/delivery-date</item>
+                                                                    <item name="template" xsi:type="string">Wheelpros_ExtendedShippingMethods/shipping-method-additional-data/delivery-date</item>
                                                                 </item>
                                                             </item>
                                                         </item>

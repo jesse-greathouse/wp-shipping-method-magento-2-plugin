@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace MageWorx\Checkout\Plugin;
+namespace Wheelpros\Checkout\Plugin;
 
 use Magento\Checkout\Model\Session as CheckoutSession;
 use Magento\Framework\Exception\LocalizedException;

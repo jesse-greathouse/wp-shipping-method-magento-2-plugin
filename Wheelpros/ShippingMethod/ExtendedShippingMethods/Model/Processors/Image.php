@@ -1,17 +1,14 @@
 <?php
-/**
- * Copyright © MageWorx. All rights reserved.
- * See LICENSE.txt for license details.
- */
 
-namespace MageWorx\ExtendedShippingMethods\Model\Processors;
+
+namespace Wheelpros\ExtendedShippingMethods\Model\Processors;
 
 /**
  * Class Image
  *
  * Add images to the shipping method
  */
-class Image implements \MageWorx\ExtendedShippingMethods\Api\DataProcessorInterface
+class Image implements \Wheelpros\ExtendedShippingMethods\Api\DataProcessorInterface
 {
     /**
      * @var array
@@ -19,17 +16,17 @@ class Image implements \MageWorx\ExtendedShippingMethods\Api\DataProcessorInterf
     private $imagesConfig;
 
     /**
-     * @var \MageWorx\ExtendedShippingMethods\Helper\Data
+     * @var \Wheelpros\ExtendedShippingMethods\Helper\Data
      */
     private $helper;
 
     /**
      * Image constructor.
      *
-     * @param \MageWorx\ExtendedShippingMethods\Helper\Data $helper
+     * @param \Wheelpros\ExtendedShippingMethods\Helper\Data $helper
      */
     public function __construct(
-        \MageWorx\ExtendedShippingMethods\Helper\Data $helper
+        \Wheelpros\ExtendedShippingMethods\Helper\Data $helper
     ) {
         $this->helper = $helper;
     }

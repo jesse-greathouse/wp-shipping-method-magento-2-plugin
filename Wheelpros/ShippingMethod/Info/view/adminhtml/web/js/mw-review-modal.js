@@ -5,7 +5,7 @@ define([
             initModal: function(config, elemen) {
                 var target = $(config.target);
                 target.modal({
-                    modalClass: 'mageworx-modal-review',
+                    modalClass: 'wheelpros-modal-review',
 
                     title: $.mage.__('Thank you for your feedback!'),
 
@@ -28,7 +28,7 @@ define([
 
                     buttons: [{
                         text: $.mage.__('Send'),
-                        class: 'mw-ext__submit__button',
+                        class: 'wp-ext__submit__button',
                         attr: {},
 
                         click: function (event) {
@@ -45,7 +45,7 @@ define([
         };
 
         return {
-            'mw-review-modal': MwReviewModal.initModal
+            'wp-review-modal': MwReviewModal.initModal
         };
     }
 );

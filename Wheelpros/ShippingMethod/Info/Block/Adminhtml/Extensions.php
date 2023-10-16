@@ -1,10 +1,7 @@
 <?php
-/**
- * Copyright ©  MageWorx. All rights reserved.
- * See LICENSE.txt for license details.
- */
 
-namespace MageWorx\Info\Block\Adminhtml;
+
+namespace Wheelpros\Info\Block\Adminhtml;
 
 use Magento\Framework\DataObjectFactory;
 use Magento\Framework\View\Element\Template;
@@ -12,12 +9,12 @@ use Magento\Framework\View\Element\Template;
 class Extensions extends Template
 {
     /**
-     * @var \MageWorx\Info\Helper\Data
+     * @var \Wheelpros\Info\Helper\Data
      */
     protected $helper;
 
     /**
-     * @var \MageWorx\Info\Model\MetaPackageList
+     * @var \Wheelpros\Info\Model\MetaPackageList
      */
     protected $metaPackageList;
 
@@ -29,21 +26,21 @@ class Extensions extends Template
     /**
      * @var string
      */
-    protected $_template = 'MageWorx_Info::extensions.phtml';
+    protected $_template = 'Wheelpros_Info::extensions.phtml';
 
     /**
      * Extensions constructor.
      *
-     * @param \MageWorx\Info\Model\MetaPackageList $metaPackageList
+     * @param \Wheelpros\Info\Model\MetaPackageList $metaPackageList
      * @param \Magento\Framework\Component\ComponentRegistrarInterface $componentRegistrar
      * @param \Magento\Framework\Filesystem\Directory\ReadFactory $readFactory
-     * @param \MageWorx\Info\Helper\Data $helper
+     * @param \Wheelpros\Info\Helper\Data $helper
      * @param Template\Context $context
      * @param array $data
      */
     public function __construct(
-        \MageWorx\Info\Model\MetaPackageList $metaPackageList,
-        \MageWorx\Info\Helper\Data $helper,
+        \Wheelpros\Info\Model\MetaPackageList $metaPackageList,
+        \Wheelpros\Info\Helper\Data $helper,
         DataObjectFactory $dataObjectFactory,
         Template\Context $context,
         array $data = []
@@ -117,7 +114,7 @@ class Extensions extends Template
      */
     public function getExtensionUrl($extension, &$isMarketplaceUrl = false)
     {
-        if (\MageWorx\Info\Helper\Data::USE_MARKETPLACE_URL) {
+        if (\Wheelpros\Info\Helper\Data::USE_MARKETPLACE_URL) {
 
             list($url) = explode('#', $extension->getMarketplaceLink());
 
